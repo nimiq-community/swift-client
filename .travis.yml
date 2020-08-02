@@ -1,0 +1,18 @@
+language: swift
+osx_image: xcode11.4
+xcode_project: NimiqClient.xcodeproj
+xcode_scheme: NimiqClient-Package
+matrix:
+  include:
+  - xcode_sdk: macosx10.15
+    env: DESTINATION="platform=macOS,arch=x86_64"
+  - xcode_sdk: iphonesimulator13.4
+    env: DESTINATION="platform=iOS Simulator,OS=13.1,name=iPhone 8"
+  - xcode_sdk: iphonesimulator13.4
+    env: DESTINATION="platform=iOS Simulator,OS=13.2.2,name=iPad (7th generation)"
+  - xcode_sdk: appletvsimulator13.4
+    env: DESTINATION="platform=tvOS Simulator,OS=13.4,name=Apple TV"
+script:
+  - set -o pipefail
+  - xcodebuild clean build build-for-testing -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" -sdk "${TRAVIS_XCODE_SDK}" -destination "${DESTINATION}" | xcpretty
+  - xcodebuild test-without-building -project "${TRAVIS_XCODE_PROJECT}" -scheme "${TRAVIS_XCODE_SCHEME}" -sdk "${TRAVIS_XCODE_SDK}" -destination "${DESTINATION}" | xcpretty
