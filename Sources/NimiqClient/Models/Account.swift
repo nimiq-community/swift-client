@@ -34,11 +34,11 @@ public class VestingContract : Account {
     public var vestingStepAmount: Int
     /// The total amount (in smallest unit) that was provided at the contract creation.
     public var vestingTotalAmount: Int
-    
+
     private enum CodingKeys: String, CodingKey {
         case owner, ownerAddress, vestingStart, vestingStepBlocks, vestingStepAmount, vestingTotalAmount
     }
-    
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.owner = try container.decode(String.self, forKey: .owner)
@@ -71,7 +71,7 @@ public class HTLC : Account {
     public var timeout: Int
     /// The total amount (in smallest unit) that was provided at the contract creation.
     public var totalAmount: Int
-    
+
     private enum CodingKeys: String, CodingKey {
         case sender, senderAddress, recipient, recipientAddress, hashRoot, hashAlgorithm, hashCount, timeout, totalAmount
     }

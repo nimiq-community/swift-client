@@ -25,7 +25,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerCount() {
-        URLProtocolStub.testData = Fixtures.peerCount()
+        URLProtocolStub.testData = NimiqClientTests.peerCount()
 
         let result = try? client.peerCount()
 
@@ -35,7 +35,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_syncingStateWhenSyncing() {
-        URLProtocolStub.testData = Fixtures.syncing()
+        URLProtocolStub.testData = NimiqClientTests.syncing()
 
         let result = try? client.syncing()
 
@@ -49,7 +49,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_syncingStateWhenNotSyncing() {
-        URLProtocolStub.testData = Fixtures.syncingNotSyncing()
+        URLProtocolStub.testData = NimiqClientTests.syncingNotSyncing()
 
         let result = try? client.syncing()
 
@@ -61,7 +61,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_consensusState() {
-        URLProtocolStub.testData = Fixtures.consensusSyncing()
+        URLProtocolStub.testData = NimiqClientTests.consensusSyncing()
 
         let result = try? client.consensus()
 
@@ -71,7 +71,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerListWithPeers() {
-        URLProtocolStub.testData = Fixtures.peerList()
+        URLProtocolStub.testData = NimiqClientTests.peerList()
 
         let result = try? client.peerList()
 
@@ -92,7 +92,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerListWhenEmpty() {
-        URLProtocolStub.testData = Fixtures.peerListEmpty()
+        URLProtocolStub.testData = NimiqClientTests.peerListEmpty()
 
         let result = try? client.peerList()
 
@@ -102,7 +102,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerNormal() {
-        URLProtocolStub.testData = Fixtures.peerStateNormal()
+        URLProtocolStub.testData = NimiqClientTests.peerStateNormal()
 
         let result = try? client.peerState(address: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e")
 
@@ -117,7 +117,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerFailed() {
-        URLProtocolStub.testData = Fixtures.peerStateFailed()
+        URLProtocolStub.testData = NimiqClientTests.peerStateFailed()
 
         let result = try? client.peerState(address: "wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0")
 
@@ -132,7 +132,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_peerError() {
-        URLProtocolStub.testData = Fixtures.peerStateError()
+        URLProtocolStub.testData = NimiqClientTests.peerStateError()
 
         XCTAssertThrowsError(try client.peerState(address: "unknown")) { error in
             guard case Error.remoteError( _) = error else {
@@ -142,7 +142,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setPeerNormal() {
-        URLProtocolStub.testData = Fixtures.peerStateNormal()
+        URLProtocolStub.testData = NimiqClientTests.peerStateNormal()
 
         let result = try? client.peerState(address: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", command: PeerStateCommand.connect)
 
@@ -158,7 +158,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_sendRawTransaction() {
-        URLProtocolStub.testData = Fixtures.sendTransaction()
+        URLProtocolStub.testData = NimiqClientTests.sendTransaction()
 
         let result = try? client.sendRawTransaction("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000000010000000000000001000dc2e201b5a1755aec80aa4227d5afc6b0de0fcfede8541f31b3c07b9a85449ea9926c1c958628d85a2b481556034ab3d67ff7de28772520813c84aaaf8108f6297c580c")
 
@@ -169,7 +169,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_createRawTransaction() {
-        URLProtocolStub.testData = Fixtures.createRawTransactionBasic()
+        URLProtocolStub.testData = NimiqClientTests.createRawTransactionBasic()
 
         let transaction = OutgoingTransaction(
             from: "NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM",
@@ -199,7 +199,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_sendTransaction() {
-        URLProtocolStub.testData = Fixtures.sendTransaction()
+        URLProtocolStub.testData = NimiqClientTests.sendTransaction()
 
         let transaction = OutgoingTransaction(
             from: "NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM",
@@ -229,7 +229,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getRawTransactionInfo() {
-        URLProtocolStub.testData = Fixtures.getRawTransactionInfoBasic()
+        URLProtocolStub.testData = NimiqClientTests.getRawTransactionInfoBasic()
 
         let result = try? client.getRawTransactionInfo(transaction: "00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802")
 
@@ -247,7 +247,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByBlockHashAndIndex() {
-        URLProtocolStub.testData = Fixtures.getTransactionFull()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
         let result = try? client.getTransactionByBlockHashAndIndex(hash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 0)
 
@@ -268,7 +268,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByBlockHashAndIndexWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.getTransactionNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
         let result = try? client.getTransactionByBlockHashAndIndex(hash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 5)
 
@@ -280,7 +280,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByBlockNumberAndIndex() {
-        URLProtocolStub.testData = Fixtures.getTransactionFull()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
         let result = try? client.getTransactionByBlockNumberAndIndex(height: 11608, index: 0)
 
@@ -301,7 +301,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByBlockNumberAndIndexWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.getTransactionNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
         let result = try? client.getTransactionByBlockNumberAndIndex(height: 11608, index: 0)
 
@@ -313,7 +313,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByHash() {
-        URLProtocolStub.testData = Fixtures.getTransactionFull()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
         let result = try? client.getTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
 
@@ -332,7 +332,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByHashWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.getTransactionNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
         let result = try? client.getTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
 
@@ -343,7 +343,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionByHashForContractCreation() {
-        URLProtocolStub.testData = Fixtures.getTransactionContractCreation()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionContractCreation()
 
         let result = try? client.getTransactionByHash("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2")
 
@@ -367,7 +367,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionReceipt() {
-        URLProtocolStub.testData = Fixtures.getTransactionReceiptFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionReceiptFound()
 
         let result = try? client.getTransactionReceipt(hash: "fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e")
 
@@ -384,7 +384,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionReceiptWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.getTransactionReceiptNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionReceiptNotFound()
 
         let result = try? client.getTransactionReceipt(hash: "unknown")
 
@@ -395,7 +395,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionsByAddress() {
-        URLProtocolStub.testData = Fixtures.getTransactionsFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionsFound()
 
         let result = try? client.getTransactionsByAddress("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
 
@@ -412,7 +412,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getTransactionsByAddressWhenNoFound() {
-        URLProtocolStub.testData = Fixtures.getTransactionsNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getTransactionsNotFound()
 
         let result = try? client.getTransactionsByAddress("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
 
@@ -423,7 +423,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_mempoolContentHashesOnly() {
-        URLProtocolStub.testData = Fixtures.mempoolContentHashesOnly()
+        URLProtocolStub.testData = NimiqClientTests.mempoolContentHashesOnly()
 
         let result = try? client.mempoolContent()
 
@@ -440,7 +440,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_mempoolContentFullTransactions() {
-        URLProtocolStub.testData = Fixtures.mempoolContentFullTransactions()
+        URLProtocolStub.testData = NimiqClientTests.mempoolContentFullTransactions()
 
         let result = try? client.mempoolContent(fullTransactions: true)
 
@@ -457,7 +457,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_mempoolWhenFull() {
-        URLProtocolStub.testData = Fixtures.mempool()
+        URLProtocolStub.testData = NimiqClientTests.mempool()
 
         let result = try? client.mempool()
 
@@ -470,7 +470,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_mempoolWhenEmpty() {
-        URLProtocolStub.testData = Fixtures.mempoolEmpty()
+        URLProtocolStub.testData = NimiqClientTests.mempoolEmpty()
 
         let result = try? client.mempool()
 
@@ -483,7 +483,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_minFeePerByte() {
-        URLProtocolStub.testData = Fixtures.minFeePerByte()
+        URLProtocolStub.testData = NimiqClientTests.minFeePerByte()
 
         let result = try? client.minFeePerByte()
 
@@ -493,7 +493,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setMinFeePerByte() {
-        URLProtocolStub.testData = Fixtures.minFeePerByte()
+        URLProtocolStub.testData = NimiqClientTests.minFeePerByte()
 
         let result = try? client.minFeePerByte(fee: 0)
 
@@ -504,7 +504,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_mining() {
-        URLProtocolStub.testData = Fixtures.miningState()
+        URLProtocolStub.testData = NimiqClientTests.miningState()
 
         let result = try? client.mining()
 
@@ -514,7 +514,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setMining() {
-        URLProtocolStub.testData = Fixtures.miningState()
+        URLProtocolStub.testData = NimiqClientTests.miningState()
 
         let result = try? client.mining(state: false)
 
@@ -525,7 +525,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_hashrate() {
-        URLProtocolStub.testData = Fixtures.hashrate()
+        URLProtocolStub.testData = NimiqClientTests.hashrate()
 
         let result = try? client.hashrate()
 
@@ -535,7 +535,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_minerThreads() {
-        URLProtocolStub.testData = Fixtures.minerThreads()
+        URLProtocolStub.testData = NimiqClientTests.minerThreads()
 
         let result = try? client.minerThreads()
 
@@ -545,7 +545,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setMinerThreads() {
-        URLProtocolStub.testData = Fixtures.minerThreads()
+        URLProtocolStub.testData = NimiqClientTests.minerThreads()
 
         let result = try? client.minerThreads(2)
 
@@ -556,7 +556,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_minerAddress() {
-        URLProtocolStub.testData = Fixtures.minerAddress()
+        URLProtocolStub.testData = NimiqClientTests.minerAddress()
 
         let result = try? client.minerAddress()
 
@@ -566,7 +566,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_pool() {
-        URLProtocolStub.testData = Fixtures.poolSushipool()
+        URLProtocolStub.testData = NimiqClientTests.poolSushipool()
 
         let result = try? client.pool()
 
@@ -576,7 +576,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setPool() {
-        URLProtocolStub.testData = Fixtures.poolSushipool()
+        URLProtocolStub.testData = NimiqClientTests.poolSushipool()
 
         let result = try? client.pool(address: "us.sushipool.com:443")
 
@@ -587,7 +587,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getPoolWhenNoPool() {
-        URLProtocolStub.testData = Fixtures.poolNoPool()
+        URLProtocolStub.testData = NimiqClientTests.poolNoPool()
 
         let result = try? client.pool()
 
@@ -597,7 +597,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_poolConnectionState() {
-        URLProtocolStub.testData = Fixtures.poolConnectionState()
+        URLProtocolStub.testData = NimiqClientTests.poolConnectionState()
 
         let result = try? client.poolConnectionState()
 
@@ -607,7 +607,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_poolConfirmedBalance() {
-        URLProtocolStub.testData = Fixtures.poolConfirmedBalance()
+        URLProtocolStub.testData = NimiqClientTests.poolConfirmedBalance()
 
         let result = try? client.poolConfirmedBalance()
 
@@ -617,7 +617,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getWork() {
-        URLProtocolStub.testData = Fixtures.getWork()
+        URLProtocolStub.testData = NimiqClientTests.getWork()
 
         let result = try? client.getWork()
 
@@ -630,7 +630,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getWorkWithOverride() {
-        URLProtocolStub.testData = Fixtures.getWork()
+        URLProtocolStub.testData = NimiqClientTests.getWork()
 
         let result = try? client.getWork(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", extraData: "")
 
@@ -645,7 +645,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTemplate() {
-        URLProtocolStub.testData = Fixtures.getWorkBlockTemplate()
+        URLProtocolStub.testData = NimiqClientTests.getWorkBlockTemplate()
 
         let result = try? client.getBlockTemplate()
 
@@ -657,7 +657,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTemplateWithOverride() {
-        URLProtocolStub.testData = Fixtures.getWorkBlockTemplate()
+        URLProtocolStub.testData = NimiqClientTests.getWorkBlockTemplate()
 
         let result = try? client.getBlockTemplate(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", extraData: "")
 
@@ -671,7 +671,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_submitBlock() {
-        URLProtocolStub.testData = Fixtures.submitBlock()
+        URLProtocolStub.testData = NimiqClientTests.submitBlock()
 
         let blockHex = "000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f6ba2bbf7e1478a209057000471d73fbdc28df0b717747d929cfde829c4120f62e02da3d162e20fa982029dbde9cc20f6b431ab05df1764f34af4c62a4f2b33f1f010000000000015ac3185f000134990001000000000000000000000000000000000000000007546573744e657400000000"
 
@@ -682,7 +682,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_accounts() {
-        URLProtocolStub.testData = Fixtures.accounts()
+        URLProtocolStub.testData = NimiqClientTests.accounts()
 
         let result = try? client.accounts()
 
@@ -728,7 +728,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_createAccount() {
-        URLProtocolStub.testData = Fixtures.createAccount()
+        URLProtocolStub.testData = NimiqClientTests.createAccount()
 
         let result = try? client.createAccount()
 
@@ -741,7 +741,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBalance() {
-        URLProtocolStub.testData = Fixtures.getBalance()
+        URLProtocolStub.testData = NimiqClientTests.getBalance()
 
         let result = try? client.getBalance(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
@@ -752,7 +752,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getAccount() {
-        URLProtocolStub.testData = Fixtures.getAccountBasic()
+        URLProtocolStub.testData = NimiqClientTests.getAccountBasic()
 
         let result = try? client.getAccount(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
@@ -768,7 +768,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getAccountForVestingContract() {
-        URLProtocolStub.testData = Fixtures.getAccountVesting()
+        URLProtocolStub.testData = NimiqClientTests.getAccountVesting()
 
         let result = try? client.getAccount(address: "NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF")
 
@@ -790,7 +790,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getAccountForHashedTimeLockedContract() {
-        URLProtocolStub.testData = Fixtures.getAccountVestingHtlc()
+        URLProtocolStub.testData = NimiqClientTests.getAccountVestingHtlc()
 
         let result = try? client.getAccount(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
@@ -815,7 +815,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_blockNumber() {
-        URLProtocolStub.testData = Fixtures.blockNumber()
+        URLProtocolStub.testData = NimiqClientTests.blockNumber()
 
         let result = try? client.blockNumber()
 
@@ -825,7 +825,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTransactionCountByHash() {
-        URLProtocolStub.testData = Fixtures.blockTransactionCountFound()
+        URLProtocolStub.testData = NimiqClientTests.blockTransactionCountFound()
 
         let result = try? client.getBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
@@ -836,7 +836,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTransactionCountByHashWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.blockTransactionCountNotFound()
+        URLProtocolStub.testData = NimiqClientTests.blockTransactionCountNotFound()
 
         let result = try? client.getBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
@@ -847,7 +847,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTransactionCountByNumber() {
-        URLProtocolStub.testData = Fixtures.blockTransactionCountFound()
+        URLProtocolStub.testData = NimiqClientTests.blockTransactionCountFound()
 
         let result = try? client.getBlockTransactionCountByNumber(height: 11608)
 
@@ -858,7 +858,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockTransactionCountByNumberWhenNotFound() {
-        URLProtocolStub.testData = Fixtures.blockTransactionCountNotFound()
+        URLProtocolStub.testData = NimiqClientTests.blockTransactionCountNotFound()
 
         let result = try? client.getBlockTransactionCountByNumber(height: 11608)
 
@@ -869,7 +869,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByHash() {
-        URLProtocolStub.testData = Fixtures.getBlockFound()
+        URLProtocolStub.testData = NimiqClientTests.getBlockFound()
 
         let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
@@ -888,7 +888,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByHashWithTransactions() {
-        URLProtocolStub.testData = Fixtures.getBlockWithTransactions()
+        URLProtocolStub.testData = NimiqClientTests.getBlockWithTransactions()
 
         let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", fullTransactions: true)
 
@@ -907,7 +907,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByHashNotFound() {
-        URLProtocolStub.testData = Fixtures.getBlockNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getBlockNotFound()
 
         let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
@@ -919,7 +919,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByNumber() {
-        URLProtocolStub.testData = Fixtures.getBlockFound()
+        URLProtocolStub.testData = NimiqClientTests.getBlockFound()
 
         let result = try? client.getBlockByNumber(height: 11608)
 
@@ -938,7 +938,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByNumberWithTransactions() {
-        URLProtocolStub.testData = Fixtures.getBlockWithTransactions()
+        URLProtocolStub.testData = NimiqClientTests.getBlockWithTransactions()
 
         let result = try? client.getBlockByNumber(height: 11608, fullTransactions: true)
 
@@ -957,7 +957,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_getBlockByNumberNotFound() {
-        URLProtocolStub.testData = Fixtures.getBlockNotFound()
+        URLProtocolStub.testData = NimiqClientTests.getBlockNotFound()
 
         let result = try? client.getBlockByNumber(height: 11608)
 
@@ -969,7 +969,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_constant() {
-        URLProtocolStub.testData = Fixtures.constant()
+        URLProtocolStub.testData = NimiqClientTests.constant()
 
         let result = try? client.constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH")
 
@@ -980,7 +980,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_setConstant() {
-        URLProtocolStub.testData = Fixtures.constant()
+        URLProtocolStub.testData = NimiqClientTests.constant()
 
         let result = try? client.constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", value: 10)
 
@@ -992,7 +992,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_resetConstant() {
-        URLProtocolStub.testData = Fixtures.constant()
+        URLProtocolStub.testData = NimiqClientTests.constant()
 
         let result = try? client.resetConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH")
 
@@ -1004,7 +1004,7 @@ final class NimiqClientTests: XCTestCase {
     }
 
     func test_log() {
-        URLProtocolStub.testData = Fixtures.log()
+        URLProtocolStub.testData = NimiqClientTests.log()
 
         let result = try? client.log(tag: "*", level: LogLevel.verbose)
 

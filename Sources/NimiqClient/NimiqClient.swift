@@ -174,7 +174,7 @@ public class NimiqClient {
 
     /// URL of the JSONRPC server.
     private let url: String
-    
+
     /// Base64 string containing authentication parameters.
     private let auth: String
 
