@@ -13,18 +13,18 @@ var client = NimiqClient(
 do {
     // Get consensus
     let consensus = try client.consensus()!
-    print("Consensus: \(consensus)");
+    print("Consensus: \(consensus)")
 
     if consensus == ConsensusState.established {
         // Get accounts
-        print("Getting basic accounts:");
+        print("Getting basic accounts:")
         for account in try client.accounts()! {
             // Show basic account address
             if let basicAccount = account as? Account, basicAccount.type == AccountType.basic {
-                print(basicAccount.address);
+                print(basicAccount.address)
             }
         }
     }
 } catch Error.internalError(let error) {
-    print("Got error when trying to connect to the RPC server: \(error)");
+    print("Got error when trying to connect to the RPC server: \(error)")
 }
