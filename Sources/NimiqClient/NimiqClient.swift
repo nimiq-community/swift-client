@@ -213,7 +213,7 @@ public class NimiqClient {
     /// - Parameter method: JSONRPC method.
     /// - Parameter params: Parameters used by the request.
     /// - Returns: If succesfull, returns the model reperestation of the result, `nil` otherwise.
-    private func call<T:Decodable>(method: String, params: [Any]) throws -> T? {
+    private func call<T:Decodable>(method: String, params: [Any] = []) throws -> T? {
         var responseObject: Root<T>? = nil
         var clientError: Error? = nil
 
@@ -278,7 +278,7 @@ public class NimiqClient {
     /// Returns a list of addresses owned by client.
     /// - Returns: Array of Accounts owned by the client.
     public func accounts() throws -> [Any]? {
-        let result: [RawAccount] = try call(method: "accounts", params: [])!
+        let result: [RawAccount] = try call(method: "accounts")!
         var converted: [Any] = [Any]()
         for rawAccount in result {
             converted.append(rawAccount.value)
@@ -289,13 +289,13 @@ public class NimiqClient {
     /// Returns the height of most recent block.
     /// - Returns: The current block height the client is on.
     public func blockNumber() throws -> Int? {
-        return try call(method: "blockNumber", params: [])
+        return try call(method: "blockNumber")
     }
 
     /// Returns information on the current consensus state.
     /// - Returns: Consensus state. `established` is the value for a good state, other values indicate bad.
     public func consensus() throws -> ConsensusState? {
-        return try call(method: "consensus", params: [])
+        return try call(method: "consensus")
     }
 
     /// Returns or overrides a constant value.
@@ -315,7 +315,7 @@ public class NimiqClient {
     /// Creates a new account and stores its private key in the client store.
     /// - Returns: Information on the wallet that was created using the command.
     public func createAccount() throws -> Wallet? {
-        return try call(method: "createAccount", params: [])
+        return try call(method: "createAccount")
     }
 
     /// Creates and signs a transaction without sending it. The transaction can then be send via `sendRawTransaction()` without accidentally replaying it.
@@ -449,7 +449,7 @@ public class NimiqClient {
     /// Returns the number of hashes per second that the node is mining with.
     /// - Returns: Number of hashes per second.
     public func hashrate() throws -> Float? {
-        return try call(method: "hashrate", params: [])
+        return try call(method: "hashrate")
     }
 
     /// Sets the log level of the node.
@@ -463,7 +463,7 @@ public class NimiqClient {
     /// Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit).
     /// - Returns: Mempool information.
     public func mempool() throws -> MempoolInfo? {
-        return try call(method: "mempool", params: [])
+        return try call(method: "mempool")
     }
 
     /// Returns transactions that are currently in the mempool.
@@ -481,7 +481,7 @@ public class NimiqClient {
     /// Returns the miner address.
     /// - Returns: The miner address configured on the node.
     public func minerAddress() throws -> String? {
-        return try call(method: "minerAddress", params: [])
+        return try call(method: "minerAddress")
     }
 
     /// Returns or sets the number of CPU threads for the miner.
@@ -526,13 +526,13 @@ public class NimiqClient {
     /// Returns number of peers currently connected to the client.
     /// - Returns: Number of connected peers.
     public func peerCount() throws -> Int? {
-        return try call(method: "peerCount", params: [])
+        return try call(method: "peerCount")
     }
 
     /// Returns list of peers known to the client.
     /// - Returns: The list of peers.
     public func peerList() throws -> [Peer]? {
-        return try call(method: "peerList", params: [])
+        return try call(method: "peerList")
     }
 
     /// Returns the state of the peer.
@@ -568,13 +568,13 @@ public class NimiqClient {
     /// Returns the confirmed mining pool balance.
     /// - Returns: The confirmed mining pool balance (in smallest unit).
     public func poolConfirmedBalance() throws -> Int? {
-        return try call(method: "poolConfirmedBalance", params: [])
+        return try call(method: "poolConfirmedBalance")
     }
 
     /// Returns the connection state to mining pool.
     /// - Returns: The mining pool connection state.
     public func poolConnectionState() throws -> PoolConnectionState? {
-        return try call(method: "poolConnectionState", params: [])
+        return try call(method: "poolConnectionState")
     }
 
     /// Sends a signed message call transaction or a contract creation, if the data field contains code.
@@ -610,7 +610,7 @@ public class NimiqClient {
     /// Returns an object with data about the sync status or `false`.
     /// - Returns: An object with sync status data or `false`, when not syncing.
     public func syncing() throws -> Any? {
-        let result: SyncStatusOrBool = try call(method: "syncing", params: [])!
+        let result: SyncStatusOrBool = try call(method: "syncing")!
         return result.value
     }
 
