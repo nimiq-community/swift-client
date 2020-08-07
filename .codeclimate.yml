@@ -28,5 +28,6 @@ ratings:
   paths:
   - "**.swift"
 exclude_paths:
+- Tests/
 - build/
 - docs/
