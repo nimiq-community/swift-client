@@ -29,3 +29,4 @@ ratings:
   - "**.swift"
 exclude_paths:
 - build/
+- docs/
