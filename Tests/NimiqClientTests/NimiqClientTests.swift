@@ -428,7 +428,7 @@ final class NimiqClientTests: XCTestCase {
         let result = try? client.mempoolContent()
 
         XCTAssertEqual("mempoolContent", URLProtocolStub.latestRequestMethod!)
-        XCTAssertEqual(false, URLProtocolStub.latestRequestParams![0] as? Bool)
+        XCTAssertEqual(0, URLProtocolStub.latestRequestParams!.count)
 
         XCTAssertEqual(3, result?.count)
         XCTAssertNotNil(result?[0])
@@ -875,7 +875,7 @@ final class NimiqClientTests: XCTestCase {
 
         XCTAssertEqual("getBlockByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
-        XCTAssertEqual(false, URLProtocolStub.latestRequestParams![1] as? Bool)
+        XCTAssertEqual(1, URLProtocolStub.latestRequestParams!.count)
 
         XCTAssertNotNil(result)
         XCTAssertEqual(11608, result?.number)
@@ -913,7 +913,7 @@ final class NimiqClientTests: XCTestCase {
 
         XCTAssertEqual("getBlockByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
-        XCTAssertEqual(false, URLProtocolStub.latestRequestParams![1] as? Bool)
+        XCTAssertEqual(1, URLProtocolStub.latestRequestParams!.count)
 
         XCTAssertNil(result)
     }
@@ -925,7 +925,7 @@ final class NimiqClientTests: XCTestCase {
 
         XCTAssertEqual("getBlockByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
-        XCTAssertEqual(false, URLProtocolStub.latestRequestParams![1] as? Bool)
+        XCTAssertEqual(1, URLProtocolStub.latestRequestParams!.count)
 
         XCTAssertNotNil(result)
         XCTAssertEqual(11608, result?.number)
@@ -963,7 +963,7 @@ final class NimiqClientTests: XCTestCase {
 
         XCTAssertEqual("getBlockByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
-        XCTAssertEqual(false, URLProtocolStub.latestRequestParams![1] as? Bool)
+        XCTAssertEqual(1, URLProtocolStub.latestRequestParams!.count)
 
         XCTAssertNil(result)
     }

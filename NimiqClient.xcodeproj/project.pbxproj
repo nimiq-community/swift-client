@@ -23,23 +23,23 @@
 /* Begin PBXBuildFile section */
 		E423387C24DDF47100A9028C /* NimiqClientTests+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */; };
 		E423387E24DDF52E00A9028C /* NimiqClientTests+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */; };
-		E423388024DDF63900A9028C /* NimiqClientTests+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387F24DDF63900A9028C /* NimiqClientTests+Pool.swift */; };
+		E423388024DDF63900A9028C /* NimiqClientTests+Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */; };
 		E423388224DDF6AA00A9028C /* NimiqClientTests+MemPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */; };
 		E423388424DDF71F00A9028C /* NimiqClientTests+Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */; };
 		E425B40624D9EE7B00D7325E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425B40524D9EE7B00D7325E /* main.swift */; };
 		E425B40B24D9EE9A00D7325E /* NimiqClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; };
 		E425B40C24D9EE9A00D7325E /* NimiqClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E47AAF2524DDF3A2004799A7 /* NimiqClientTests+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */; };
-		E49ABA8B24DDE94C00288D96 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8A24DDE94C00288D96 /* Server.swift */; };
+		E49ABA8B24DDE94C00288D96 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8A24DDE94C00288D96 /* Node.swift */; };
 		E49ABA8E24DDEB4800288D96 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8D24DDEB4800288D96 /* Account.swift */; };
 		E49ABA9024DDEBF100288D96 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8F24DDEBF100288D96 /* Transaction.swift */; };
 		E49ABA9224DDEC3C00288D96 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9124DDEC3C00288D96 /* Block.swift */; };
 		E49ABA9424DDECAF00288D96 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9324DDECAF00288D96 /* Peer.swift */; };
-		E49ABA9624DDECFF00288D96 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9524DDECFF00288D96 /* Pool.swift */; };
+		E49ABA9624DDECFF00288D96 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9524DDECFF00288D96 /* Miner.swift */; };
 		E49ABA9824DDED7100288D96 /* MemPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9724DDED7100288D96 /* MemPool.swift */; };
 		OBJ_28 /* NimiqClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* NimiqClient.swift */; };
 		OBJ_35 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_46 /* NimiqClientTests+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* NimiqClientTests+Server.swift */; };
+		OBJ_46 /* NimiqClientTests+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* NimiqClientTests+Node.swift */; };
 		OBJ_47 /* NimiqClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* NimiqClientTests.swift */; };
 		OBJ_48 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* URLProtocolStub.swift */; };
 		OBJ_49 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
@@ -96,22 +96,22 @@
 /* Begin PBXFileReference section */
 		E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Transaction.swift"; sourceTree = "<group>"; };
 		E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Block.swift"; sourceTree = "<group>"; };
-		E423387F24DDF63900A9028C /* NimiqClientTests+Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Pool.swift"; sourceTree = "<group>"; };
+		E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Miner.swift"; sourceTree = "<group>"; };
 		E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+MemPool.swift"; sourceTree = "<group>"; };
 		E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Peer.swift"; sourceTree = "<group>"; };
 		E425B40324D9EE7B00D7325E /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425B40524D9EE7B00D7325E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		E49ABA8A24DDE94C00288D96 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		E49ABA8A24DDE94C00288D96 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		E49ABA8D24DDEB4800288D96 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		E49ABA8F24DDEBF100288D96 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E49ABA9124DDEC3C00288D96 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		E49ABA9324DDECAF00288D96 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
-		E49ABA9524DDECFF00288D96 /* Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
+		E49ABA9524DDECFF00288D96 /* Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miner.swift; sourceTree = "<group>"; };
 		E49ABA9724DDED7100288D96 /* MemPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemPool.swift; sourceTree = "<group>"; };
 		E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Account.swift"; sourceTree = "<group>"; };
 		"NimiqClient::NimiqClient::Product" /* NimiqClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NimiqClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"NimiqClient::NimiqClientTests::Product" /* NimiqClientTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = NimiqClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_12 /* NimiqClientTests+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Server.swift"; sourceTree = "<group>"; };
+		OBJ_12 /* NimiqClientTests+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Node.swift"; sourceTree = "<group>"; };
 		OBJ_13 /* NimiqClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimiqClientTests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -167,13 +167,13 @@
 		E49ABA8C24DDEB2400288D96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E49ABA8A24DDE94C00288D96 /* Server.swift */,
 				E49ABA8D24DDEB4800288D96 /* Account.swift */,
-				E49ABA8F24DDEBF100288D96 /* Transaction.swift */,
 				E49ABA9124DDEC3C00288D96 /* Block.swift */,
-				E49ABA9324DDECAF00288D96 /* Peer.swift */,
-				E49ABA9524DDECFF00288D96 /* Pool.swift */,
 				E49ABA9724DDED7100288D96 /* MemPool.swift */,
+				E49ABA9524DDECFF00288D96 /* Miner.swift */,
+				E49ABA8A24DDE94C00288D96 /* Node.swift */,
+				E49ABA9324DDECAF00288D96 /* Peer.swift */,
+				E49ABA8F24DDEBF100288D96 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,13 +181,13 @@
 		E49ABA9924DDF0A100288D96 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* NimiqClientTests+Server.swift */,
 				E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */,
-				E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */,
 				E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */,
-				E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */,
-				E423387F24DDF63900A9028C /* NimiqClientTests+Pool.swift */,
 				E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */,
+				E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */,
+				OBJ_12 /* NimiqClientTests+Node.swift */,
+				E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */,
+				E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 				E49ABA8E24DDEB4800288D96 /* Account.swift in Sources */,
 				E49ABA9224DDEC3C00288D96 /* Block.swift in Sources */,
 				E49ABA9024DDEBF100288D96 /* Transaction.swift in Sources */,
-				E49ABA8B24DDE94C00288D96 /* Server.swift in Sources */,
-				E49ABA9624DDECFF00288D96 /* Pool.swift in Sources */,
+				E49ABA8B24DDE94C00288D96 /* Node.swift in Sources */,
+				E49ABA9624DDECFF00288D96 /* Miner.swift in Sources */,
 				E49ABA9424DDECAF00288D96 /* Peer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,9 +398,9 @@
 			buildActionMask = 0;
 			files = (
 				E47AAF2524DDF3A2004799A7 /* NimiqClientTests+Account.swift in Sources */,
-				OBJ_46 /* NimiqClientTests+Server.swift in Sources */,
+				OBJ_46 /* NimiqClientTests+Node.swift in Sources */,
 				E423387C24DDF47100A9028C /* NimiqClientTests+Transaction.swift in Sources */,
-				E423388024DDF63900A9028C /* NimiqClientTests+Pool.swift in Sources */,
+				E423388024DDF63900A9028C /* NimiqClientTests+Miner.swift in Sources */,
 				OBJ_47 /* NimiqClientTests.swift in Sources */,
 				E423388424DDF71F00A9028C /* NimiqClientTests+Peer.swift in Sources */,
 				OBJ_48 /* URLProtocolStub.swift in Sources */,

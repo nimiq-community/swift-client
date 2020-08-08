@@ -1,9 +1,3 @@
-/// Can be both a hexadecimal representation or a human readable address.
-public typealias Address = String
-
-/// Hexadecimal string containing a hash value.
-public typealias Hash = String
-
 /// Used to pass the data to send transaccions.
 public struct OutgoingTransaction {
     /// The address the transaction is send from.

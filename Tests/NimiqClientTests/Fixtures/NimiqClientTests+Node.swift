@@ -22,16 +22,6 @@ extension NimiqClientTests {
             """.data(using: .utf8)!
     }
 
-    static func hashrate() -> Data {
-        return """
-            {
-                "jsonrpc": "2.0",
-                "result": 52982.2731,
-                "id": 1
-            }
-            """.data(using: .utf8)!
-    }
-
     static func log() -> Data {
         return """
             {
@@ -47,36 +37,6 @@ extension NimiqClientTests {
             {
                 "jsonrpc": "2.0",
                 "result": 0,
-                "id": 1
-            }
-            """.data(using: .utf8)!
-    }
-
-    static func minerAddress() -> Data {
-        return """
-            {
-                "jsonrpc": "2.0",
-                "result": "NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM",
-                "id": 1
-            }
-            """.data(using: .utf8)!
-    }
-
-    static func minerThreads() -> Data {
-        return """
-            {
-                "jsonrpc": "2.0",
-                "result": 2,
-                "id": 1
-            }
-            """.data(using: .utf8)!
-    }
-
-    static func miningState() -> Data {
-        return """
-            {
-                "jsonrpc": "2.0",
-                "result": false,
                 "id": 1
             }
             """.data(using: .utf8)!
