@@ -91,16 +91,16 @@ All tests are in the `/Tests` folder and can be run from Xcode.
 
 ### Documentation
 
-The documentation is generated automatically with Jazzy. To install Jazzy run:
+The documentation is generated automatically using [SourceDocs](https://github.com/eneko/SourceDocs). To generate the documentation first intall SourceDocs. For instance using [Homebrew](https://brew.sh):
 
 ```sh
-$ gem install jazzy
+$ brew install sourcedocs
 ```
 
-Then generate the documentation running Jazzy from the repository root directory:
+Then generate the documentation in the `docs/` folder:
 
 ```sh
-$ jazzy
+$ sourcedocs generate --output-folder docs && mv docs/README.md docs/Home.md
 ```
 
 ## License
