@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Transaction Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Transaction" class="dashAnchor"></a>
+    <a title="Transaction Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">NimiqClient 0.0.2 Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">NimiqClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Transaction Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HTLC.html">HTLC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NimiqClient.html">NimiqClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VestingContract.html">VestingContract</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ConsensusState.html">ConsensusState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerAddressState.html">PeerAddressState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerConnectionState.html">PeerConnectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerStateCommand.html">PeerStateCommand</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PoolConnectionState.html">PoolConnectionState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Block.html">Block</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplate.html">BlockTemplate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplateBody.html">BlockTemplateBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplateHeader.html">BlockTemplateHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Config.html">Config</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MempoolInfo.html">MempoolInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Peer.html">Peer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SyncStatus.html">SyncStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Transaction.html">Transaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionReceipt.html">TransactionReceipt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Wallet.html">Wallet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorkInstructions.html">WorkInstructions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Transaction</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Transaction</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Transaction returned by the server.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV4hashSSvp"></a>
+                    <a name="//apple_ref/swift/Property/hash" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV4hashSSvp">hash</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hex-encoded hash of the transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV9blockHashSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/blockHash" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV9blockHashSSSgvp">blockHash</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hex-encoded hash of the block containing the transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blockHash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV11blockNumberSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/blockNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV11blockNumberSiSgvp">blockNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Height of the block containing the transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blockNumber</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV9timestampSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/timestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV9timestampSiSgvp">timestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>UNIX timestamp of the block containing the transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV13confirmationsSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/confirmations" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV13confirmationsSiSgvp">confirmations</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of confirmations of the block containing the transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">confirmations</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV16transactionIndexSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/transactionIndex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV16transactionIndexSiSgvp">transactionIndex</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Index of the transaction in the block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">transactionIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV4fromSSvp"></a>
+                    <a name="//apple_ref/swift/Property/from" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV4fromSSvp">from</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hex-encoded address of the sending account.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">from</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV11fromAddressSSvp"></a>
+                    <a name="//apple_ref/swift/Property/fromAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV11fromAddressSSvp">fromAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Nimiq user friendly address (NQ-address) of the sending account.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">fromAddress</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV2toSSvp"></a>
+                    <a name="//apple_ref/swift/Property/to" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV2toSSvp">to</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hex-encoded address of the recipient account.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV9toAddressSSvp"></a>
+                    <a name="//apple_ref/swift/Property/toAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV9toAddressSSvp">toAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Nimiq user friendly address (NQ-address) of the recipient account.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV5valueSivp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV5valueSivp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Integer of the value (in smallest unit) sent with this transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV3feeSivp"></a>
+                    <a name="//apple_ref/swift/Property/fee" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV3feeSivp">fee</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Integer of the fee (in smallest unit) for this transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">fee</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV4dataSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/data" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV4dataSSSgvp">data</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hex-encoded contract parameters or a message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient11TransactionV5flagsSivp"></a>
+                    <a name="//apple_ref/swift/Property/flags" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient11TransactionV5flagsSivp">flags</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bit-encoded transaction flags.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/rraallvv/NimiqClientSwift" target="_blank" rel="external">Nimiq Comunity</a>. All rights reserved. (Last updated: 2020-08-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

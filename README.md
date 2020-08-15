@@ -34,7 +34,7 @@ print(blockNumber) // displays the block number, for example 748883
 
 ## API
 
-The complete [API documentation](docs) is available in the `/docs` folder.
+The complete API documentation is available [here](https://rraallvv.github.io/swift-client/).
 
 Check out the [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for behind the scene RPC calls.
 
@@ -91,16 +91,18 @@ All tests are in the `/Tests` folder and can be run from Xcode.
 
 ### Documentation
 
-The documentation is generated automatically using [SourceDocs](https://github.com/eneko/SourceDocs). To generate the documentation first intall SourceDocs. For instance using [Homebrew](https://brew.sh):
+The documentation is generated automatically with [Jazzy](https://github.com/realm/jazzy).
+
+To generate the documentation first intall Jazzy:
 
 ```sh
-$ brew install sourcedocs
+$ gem install jazzy
 ```
 
-Then generate the documentation in the `docs/` folder:
+Then generate the documentation running Jazzy from the repository root directory:
 
 ```sh
-$ sourcedocs generate --output-folder docs && mv docs/README.md docs/Home.md
+$ jazzy
 ```
 
 ## License

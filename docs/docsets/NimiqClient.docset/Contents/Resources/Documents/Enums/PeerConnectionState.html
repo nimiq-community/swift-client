@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PeerConnectionState Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/PeerConnectionState" class="dashAnchor"></a>
+    <a title="PeerConnectionState Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">NimiqClient 0.0.2 Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">NimiqClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PeerConnectionState Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HTLC.html">HTLC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NimiqClient.html">NimiqClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VestingContract.html">VestingContract</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ConsensusState.html">ConsensusState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerAddressState.html">PeerAddressState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerConnectionState.html">PeerConnectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PeerStateCommand.html">PeerStateCommand</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PoolConnectionState.html">PoolConnectionState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Block.html">Block</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplate.html">BlockTemplate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplateBody.html">BlockTemplateBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockTemplateHeader.html">BlockTemplateHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Config.html">Config</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MempoolInfo.html">MempoolInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Peer.html">Peer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SyncStatus.html">SyncStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Transaction.html">Transaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionReceipt.html">TransactionReceipt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Wallet.html">Wallet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorkInstructions.html">WorkInstructions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PeerConnectionState</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PeerConnectionState</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Peer connection state returned by the server.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO3newyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/new" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO3newyA2CmF">new</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>New connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="k">new</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO10connectingyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/connecting" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO10connectingyA2CmF">connecting</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connecting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">connecting</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO9connectedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/connected" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO9connectedyA2CmF">connected</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">connected</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO11negotiatingyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/negotiating" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO11negotiatingyA2CmF">negotiating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Negotiating connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">negotiating</span> <span class="o">=</span> <span class="mi">4</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO11establishedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/established" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO11establishedyA2CmF">established</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connection established.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">established</span> <span class="o">=</span> <span class="mi">5</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClient19PeerConnectionStateO6closedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/closed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClient19PeerConnectionStateO6closedyA2CmF">closed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connection closed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">closed</span> <span class="o">=</span> <span class="mi">6</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/rraallvv/NimiqClientSwift" target="_blank" rel="external">Nimiq Comunity</a>. All rights reserved. (Last updated: 2020-08-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
