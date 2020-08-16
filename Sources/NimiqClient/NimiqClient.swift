@@ -39,92 +39,54 @@ struct Root<T:Decodable>: Decodable {
 }
 
 /// Nimiq account returned by the server. The especific type is in the associated value.
-enum RawAccount : Decodable {
-    case account(Account)
-    case vesting(VestingContract)
-    case htlc(HTLC)
-
-    var value: Any {
-         switch self {
-         case .account(let value):
-             return value
-         case .vesting(let value):
-             return value
-         case .htlc(let value):
-             return value
-         }
+struct RawAccount: Decodable {
+    enum CodingKeys: CodingKey {
+        case type
     }
 
-    private enum CodingKeys: String, CodingKey {
-        case account, vestingContract, hashedTimeLockedContract
-    }
+    let type: AccountType
+
+    let account: Account
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        do {
-            self = .htlc(try container.decode(HTLC.self))
-        } catch {
-            do {
-                self = .vesting(try container.decode(VestingContract.self))
-            } catch {
-                self = .account(try container.decode(Account.self))
-            }
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        type = try container.decode(AccountType.self, forKey: .type)
+        let accountContainer = try decoder.singleValueContainer()
+        switch type {
+        case .htlc:
+            account = try accountContainer.decode(HTLC.self)
+        case .vesting:
+            account = try accountContainer.decode(VestingContract.self)
+        default:
+            account = try accountContainer.decode(Account.self)
         }
     }
 }
 
 /// Transaction returned by the server. The especific type is in the associated value.
-enum HashOrTransaction : Decodable {
-    case hash(Hash)
-    case transaction(Transaction)
-
-    var value: Any {
-         switch self {
-         case .hash(let value):
-             return value
-         case .transaction(let value):
-             return value
-         }
-    }
-
-    private enum CodingKeys: String, CodingKey {
-        case hash, transaction
-    }
+struct HashOrTransaction : Decodable {
+    let transaction: Any
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         do {
-            self = .transaction(try container.decode(Transaction.self))
+            transaction = try container.decode(Transaction.self)
         } catch {
-            self = .hash(try container.decode(Hash.self))
+            transaction = try container.decode(String.self)
         }
     }
 }
 
 /// Syncing status returned by the server. The especific type is in the associated value.
-enum SyncStatusOrBool : Decodable {
-    case syncStatus(SyncStatus)
-    case bool(Bool)
-
-    var value: Any {
-         switch self {
-         case .syncStatus(let value):
-             return value
-         case .bool(let value):
-             return value
-         }
-    }
-
-    private enum CodingKeys: String, CodingKey {
-        case syncStatus, bool
-    }
+struct SyncStatusOrBool : Decodable {
+    let syncStatus: Any
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         do {
-            self = .syncStatus(try container.decode(SyncStatus.self))
+            syncStatus = try container.decode(SyncStatus.self)
         } catch {
-            self = .bool(try container.decode(Bool.self))
+            syncStatus = try container.decode(Bool.self)
         }
     }
 }
@@ -135,15 +97,15 @@ enum SyncStatusOrBool : Decodable {
 /// Used in convenience initializer in the NimiqClient class.
 public struct Config {
     /// Protocol squeme, `"http"` or `"https"`.
-    public var scheme: String
+    public let scheme: String
     /// Authorized user.
-    public var user: String
+    public let user: String
     /// Password for the authorized user.
-    public var password: String
+    public let password: String
     /// Host IP address.
-    public var host: String
+    public let host: String
     /// Host port.
-    public var port: Int
+    public let port: Int
 
     /// Config initialization.
     /// - Parameter scheme: Protocol squeme, `"http"` or `"https"`.
@@ -220,7 +182,7 @@ public class NimiqClient {
     private func call<T:Decodable>(method: String, params: Any...) throws -> T? {
         var responseObject: Root<T>? = nil
         var clientError: Error? = nil
-        
+
         // increase the JSONRPC client request id
         id += 1
 
@@ -284,8 +246,8 @@ public class NimiqClient {
     public func accounts() throws -> [Any]? {
         let result: [RawAccount] = try call(method: "accounts")!
         var converted: [Any] = [Any]()
-        for rawAccount in result {
-            converted.append(rawAccount.value)
+        for container in result {
+            converted.append(container.account)
         }
         return converted
     }
@@ -343,7 +305,7 @@ public class NimiqClient {
     /// - Returns: Details about the account. Returns the default empty basic account for non-existing accounts.
     public func getAccount(address: Address) throws -> Any? {
         let result: RawAccount = try call(method: "getAccount", params: address)!
-        return result.value
+        return result.account
     }
 
     /// Returns the balance of the account of given address.
@@ -488,7 +450,7 @@ public class NimiqClient {
         } else {
             result = try call(method: "mempoolContent")!
         }
-        return result.map { tx in tx.value }
+        return result.map { tx in tx.transaction }
     }
 
     /// Returns the miner address.
@@ -621,7 +583,7 @@ public class NimiqClient {
     /// - Returns: An object with sync status data or `false`, when not syncing.
     public func syncing() throws -> Any? {
         let result: SyncStatusOrBool = try call(method: "syncing")!
-        return result.value
+        return result.syncStatus
     }
 
     /// Deserializes hex-encoded transaction and returns a transaction object.
