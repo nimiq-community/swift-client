@@ -55,7 +55,7 @@ public struct Peer : Decodable {
     /// Time offset with the peer (in miliseconds).
     public var timeOffset: Int?
     /// Hash of the head block of the peer.
-    public var headHash: Hash?
+    public var headHash: String?
     /// Latency to the peer.
     public var latency: Int?
     /// Received bytes.

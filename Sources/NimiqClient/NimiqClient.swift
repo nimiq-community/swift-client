@@ -1,99 +1,5 @@
 import Foundation
 
-/// Can be both a hexadecimal representation or a human readable address.
-public typealias Address = String
-
-/// Hexadecimal string containing a hash value.
-public typealias Hash = String
-
-/// Used to set the log level in the JSONRPC server.
-public enum LogLevel : String {
-    /// Trace level log.
-    case trace
-    /// Verbose level log.
-    case verbose
-    /// Debugging level log.
-    case debug
-    /// Info level log.
-    case info
-    /// Warning level log.
-    case warn
-    /// Error level log.
-    case error
-    /// Assertions level log.
-    case assert
-}
-
-/// Error returned in the response from the JSONRPC server.
-struct ResponseError: Decodable {
-    var code: Int
-    var message: String
-}
-
-/// Used to decode the JSONRPC response returned by the server.
-struct Root<T:Decodable>: Decodable {
-    var jsonrpc: String
-    var result: T?
-    var id: Int
-    var error: ResponseError?
-}
-
-/// Nimiq account returned by the server. The especific type is in the associated value.
-struct RawAccount: Decodable {
-    enum CodingKeys: CodingKey {
-        case type
-    }
-
-    let type: AccountType
-
-    let account: Account
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        type = try container.decode(AccountType.self, forKey: .type)
-        let accountContainer = try decoder.singleValueContainer()
-        switch type {
-        case .htlc:
-            account = try accountContainer.decode(HTLC.self)
-        case .vesting:
-            account = try accountContainer.decode(VestingContract.self)
-        default:
-            account = try accountContainer.decode(Account.self)
-        }
-    }
-}
-
-/// Transaction returned by the server. The especific type is in the associated value.
-struct HashOrTransaction : Decodable {
-    let transaction: Any
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        do {
-            transaction = try container.decode(Transaction.self)
-        } catch {
-            transaction = try container.decode(String.self)
-        }
-    }
-}
-
-/// Syncing status returned by the server. The especific type is in the associated value.
-struct SyncStatusOrBool : Decodable {
-    let syncStatus: Any
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        do {
-            syncStatus = try container.decode(SyncStatus.self)
-        } catch {
-            syncStatus = try container.decode(Bool.self)
-        }
-    }
-}
-
-// MARK: -
-// MARK: JSONRPC Client
-
 /// Used in convenience initializer in the NimiqClient class.
 public struct Config {
     /// Protocol squeme, `"http"` or `"https"`.
@@ -128,12 +34,24 @@ public enum Error: Swift.Error, Equatable {
     case internalError(_ message: String)
     /// Exception on the remote server.
     case remoteError(_ message: String)
-    /// Error with connection.
-    case connectionError(_ message: String)
 }
 
 /// Nimiq JSONRPC Client
 public class NimiqClient {
+    
+    /// Error returned in the response from the JSONRPC server.
+    private struct ResponseError: Decodable {
+        var code: Int
+        var message: String
+    }
+
+    /// Used to decode the JSONRPC response returned by the server.
+    private struct Root<T:Decodable>: Decodable {
+        var jsonrpc: String
+        var result: T?
+        var id: Int
+        var error: ResponseError?
+    }
 
     /// Number in the sequence for the next request.
     public var id: Int = 0
@@ -218,7 +136,7 @@ public class NimiqClient {
                     clientError = Error.internalError(error.localizedDescription)
                 }
             } else {
-                clientError = Error.connectionError(error!.localizedDescription)
+                clientError = Error.internalError(error!.localizedDescription)
             }
 
             // signal that the request was completed
@@ -303,7 +221,7 @@ public class NimiqClient {
     /// Returns details for the account of given address.
     /// - Parameter address: Address to get account details.
     /// - Returns: Details about the account. Returns the default empty basic account for non-existing accounts.
-    public func getAccount(address: Address) throws -> Any? {
+    public func getAccount(address: String) throws -> Any? {
         let result: RawAccount = try call(method: "getAccount", params: address)!
         return result.account
     }
@@ -311,7 +229,7 @@ public class NimiqClient {
     /// Returns the balance of the account of given address.
     /// - Parameter address: Address to check for balance.
     /// - Returns: The current balance at the specified address (in smalest unit).
-    public func getBalance(address: Address) throws -> Int? {
+    public func getBalance(address: String) throws -> Int? {
         return try call(method: "getBalance", params: address)
     }
 
@@ -319,7 +237,7 @@ public class NimiqClient {
     /// - Parameter hash: Hash of the block to gather information on.
     /// - Parameter fullTransactions: If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
     /// - Returns: A block object or `nil` when no block was found.
-    public func getBlockByHash(_ hash: Hash, fullTransactions: Bool? = nil) throws -> Block? {
+    public func getBlockByHash(_ hash: String, fullTransactions: Bool? = nil) throws -> Block? {
         if fullTransactions != nil {
             return try call(method: "getBlockByHash", params: hash, fullTransactions!)
         } else {
@@ -344,7 +262,7 @@ public class NimiqClient {
     /// - Parameter address: The address to use as a miner for this block. This overrides the address provided during startup or from the pool.
     /// - Parameter extraData: Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.
     /// - Returns: A block template object.
-    public func getBlockTemplate(address: Address? = nil, extraData: String = "") throws -> BlockTemplate? {
+    public func getBlockTemplate(address: String? = nil, extraData: String = "") throws -> BlockTemplate? {
         if address != nil {
             return try call(method: "getBlockTemplate", params: address!, extraData)
         } else {
@@ -355,7 +273,7 @@ public class NimiqClient {
     /// Returns the number of transactions in a block from a block matching the given block hash.
     /// - Parameter hash: Hash of the block.
     /// - Returns: Number of transactions in the block found, or `nil`, when no block was found.
-    public func getBlockTransactionCountByHash(_ hash: Hash) throws -> Int? {
+    public func getBlockTransactionCountByHash(_ hash: String) throws -> Int? {
         return try call(method: "getBlockTransactionCountByHash", params: hash)
     }
 
@@ -370,7 +288,7 @@ public class NimiqClient {
     /// - Parameter hash: Hash of the block containing the transaction.
     /// - Parameter index: Index of the transaction in the block.
     /// - Returns: A transaction object or `nil` when no transaction was found.
-    public func getTransactionByBlockHashAndIndex(hash: Hash, index: Int) throws -> Transaction? {
+    public func getTransactionByBlockHashAndIndex(hash: String, index: Int) throws -> Transaction? {
         return try call(method: "getTransactionByBlockHashAndIndex", params: hash, index)
     }
 
@@ -385,14 +303,14 @@ public class NimiqClient {
     /// Returns the information about a transaction requested by transaction hash.
     /// - Parameter hash: Hash of a transaction.
     /// - Returns: A transaction object or `nil` when no transaction was found.
-    public func getTransactionByHash(_ hash: Hash) throws -> Transaction? {
+    public func getTransactionByHash(_ hash: String) throws -> Transaction? {
         return try call(method: "getTransactionByHash", params: hash)
     }
 
     /// Returns the receipt of a transaction by transaction hash.
     /// - Parameter hash: Hash of a transaction.
     /// - Returns: A transaction receipt object, or `nil` when no receipt was found.
-    public func getTransactionReceipt(hash: Hash) throws -> TransactionReceipt? {
+    public func getTransactionReceipt(hash: String) throws -> TransactionReceipt? {
         return try call(method: "getTransactionReceipt", params: hash)
     }
 
@@ -401,7 +319,7 @@ public class NimiqClient {
     /// - Parameter address: Address of which transactions should be gathered.
     /// - Parameter numberOfTransactions: Number of transactions that shall be returned.
     /// - Returns: Array of transactions linked to the requested address.
-    public func getTransactionsByAddress(_ address: Address, numberOfTransactions: Int? = nil) throws -> [Transaction]? {
+    public func getTransactionsByAddress(_ address: String, numberOfTransactions: Int? = nil) throws -> [Transaction]? {
         if numberOfTransactions != nil {
             return try call(method: "getTransactionsByAddress", params: address, numberOfTransactions!)
         } else {
@@ -413,7 +331,7 @@ public class NimiqClient {
     /// - Parameter address: The address to use as a miner for this block. This overrides the address provided during startup or from the pool.
     /// - Parameter extraData: Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.
     /// - Returns: Mining work instructions.
-    public func getWork(address: Address? = nil, extraData: String = "") throws -> WorkInstructions? {
+    public func getWork(address: String? = nil, extraData: String = "") throws -> WorkInstructions? {
         if address != nil {
             return try call(method: "getWork", params: address!, extraData)
         }
@@ -552,14 +470,14 @@ public class NimiqClient {
     /// Sends a signed message call transaction or a contract creation, if the data field contains code.
     /// - Parameter transaction: The hex encoded signed transaction
     /// - Returns: The Hex-encoded transaction hash.
-    public func sendRawTransaction(_ transaction: String) throws -> Hash? {
+    public func sendRawTransaction(_ transaction: String) throws -> String? {
         return try call(method: "sendRawTransaction", params: transaction)
     }
 
     /// Creates new message call transaction or a contract creation, if the data field contains code.
     /// - Parameter transaction: The hex encoded signed transaction
     /// - Returns: The Hex-encoded transaction hash.
-    public func sendTransaction(_ transaction: OutgoingTransaction) throws -> Hash? {
+    public func sendTransaction(_ transaction: OutgoingTransaction) throws -> String? {
         let params:[String:Any?] = [
             "from": transaction.from,
             "fromType": transaction.fromType?.rawValue,

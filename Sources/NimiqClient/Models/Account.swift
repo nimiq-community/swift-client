@@ -102,3 +102,28 @@ public struct Wallet: Decodable {
     /// Hex-encoded 32 byte Ed25519 private key.
     public var privateKey: String?
 }
+
+/// Nimiq account returned by the server. The especific type is in the associated value.
+internal struct RawAccount: Decodable {
+    let type: AccountType
+
+    let account: Account
+    
+    enum CodingKeys: CodingKey {
+        case type
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        type = try container.decode(AccountType.self, forKey: .type)
+        let accountContainer = try decoder.singleValueContainer()
+        switch type {
+        case .htlc:
+            account = try accountContainer.decode(HTLC.self)
+        case .vesting:
+            account = try accountContainer.decode(VestingContract.self)
+        default:
+            account = try accountContainer.decode(Account.self)
+        }
+    }
+}
