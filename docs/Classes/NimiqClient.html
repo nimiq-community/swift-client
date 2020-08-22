@@ -125,17 +125,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="../Typealiases.html">Type Aliases</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -431,9 +420,9 @@ When no parameter is given, it uses de default configuration in the server (<cod
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC8constant_5valueSiSgSS_AEtKF"></a>
-                    <a name="//apple_ref/swift/Method/constant(_:value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC8constant_5valueSiSgSS_AEtKF">constant(_:<wbr>value:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC8constantySiSgSSKF"></a>
+                    <a name="//apple_ref/swift/Method/constant(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC8constantySiSgSSKF">constant(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -441,16 +430,14 @@ When no parameter is given, it uses de default configuration in the server (<cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns or overrides a constant value.
-When no parameter is given, it returns the value of the constant. When giving a value as parameter,
-it sets the constant to the given value. To reset the constant use <code>resetConstant()</code> instead.</p>
+                        <p>Returns  the value of the constant.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">constant</span><span class="p">(</span><span class="n">_</span> <span class="nv">constant</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">constant</span><span class="p">(</span><span class="n">_</span> <span class="nv">constant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -461,7 +448,57 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                             <tr>
                               <td>
                                 <code>
-                                <em>string</em>
+                                <em>constant</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The class and name of the constant (format should be <code>Class.CONSTANT</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the constant.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC11setConstant_2toSiSgSS_SitKF"></a>
+                    <a name="//apple_ref/swift/Method/setConstant(_:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC11setConstant_2toSiSgSS_SitKF">setConstant(_:<wbr>to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the value of a constant. It sets the constant to the given value. To reset the constant use <code>resetConstant()</code> instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setConstant</span><span class="p">(</span><span class="n">_</span> <span class="nv">constant</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>constant</em>
                                 </code>
                               </td>
                               <td>
@@ -487,7 +524,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The value of the constant.</p>
+                        <p>The new value of the constant.</p>
                       </div>
                     </section>
                   </div>
@@ -526,9 +563,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC20createRawTransactionySSSgAA08OutgoingE0VKF"></a>
-                    <a name="//apple_ref/swift/Method/createRawTransaction(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC20createRawTransactionySSSgAA08OutgoingE0VKF">createRawTransaction(_:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC20createRawTransaction4fromSSSgAA08OutgoingE0V_tKF"></a>
+                    <a name="//apple_ref/swift/Method/createRawTransaction(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC20createRawTransaction4fromSSSgAA08OutgoingE0V_tKF">createRawTransaction(from:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,7 +580,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createRawTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createRawTransaction</span><span class="p">(</span><span class="n">from</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -576,9 +613,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC10getAccount7addressypSgSS_tKF"></a>
-                    <a name="//apple_ref/swift/Method/getAccount(address:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC10getAccount7addressypSgSS_tKF">getAccount(address:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC10getAccount10forAddressypSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getAccount(forAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC10getAccount10forAddressypSgSS_tKF">getAccount(forAddress:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -593,7 +630,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -626,9 +663,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC10getBalance7addressSiSgSS_tKF"></a>
-                    <a name="//apple_ref/swift/Method/getBalance(address:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC10getBalance7addressSiSgSS_tKF">getBalance(address:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC10getBalance10forAddressSiSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getBalance(forAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC10getBalance10forAddressSiSgSS_tKF">getBalance(forAddress:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -643,7 +680,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBalance</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBalance</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -676,9 +713,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC14getBlockByHash_16fullTransactionsAA0D0VSgSS_SbSgtKF"></a>
-                    <a name="//apple_ref/swift/Method/getBlockByHash(_:fullTransactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC14getBlockByHash_16fullTransactionsAA0D0VSgSS_SbSgtKF">getBlockByHash(_:<wbr>fullTransactions:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC8getBlock7forHash16withTransactionsAA0D0VSgSS_SbSgtKF"></a>
+                    <a name="//apple_ref/swift/Method/getBlock(forHash:withTransactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC8getBlock7forHash16withTransactionsAA0D0VSgSS_SbSgtKF">getBlock(forHash:<wbr>withTransactions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -693,7 +730,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockByHash</span><span class="p">(</span><span class="n">_</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">,</span> <span class="nv">fullTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Block.html">Block</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlock</span><span class="p">(</span><span class="n">forHash</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">withTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Block.html">Block</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -716,7 +753,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                             <tr>
                               <td>
                                 <code>
-                                <em>fullTransactions</em>
+                                <em>withTransactions</em>
                                 </code>
                               </td>
                               <td>
@@ -738,9 +775,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC16getBlockByNumber6height16fullTransactionsAA0D0VSgSi_SbSgtKF"></a>
-                    <a name="//apple_ref/swift/Method/getBlockByNumber(height:fullTransactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC16getBlockByNumber6height16fullTransactionsAA0D0VSgSi_SbSgtKF">getBlockByNumber(height:<wbr>fullTransactions:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC8getBlock8atHeight16withTransactionsAA0D0VSgSi_SbSgtKF"></a>
+                    <a name="//apple_ref/swift/Method/getBlock(atHeight:withTransactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC8getBlock8atHeight16withTransactionsAA0D0VSgSi_SbSgtKF">getBlock(atHeight:<wbr>withTransactions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -755,7 +792,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockByNumber</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">fullTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Block.html">Block</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlock</span><span class="p">(</span><span class="n">atHeight</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">withTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Block.html">Block</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -778,7 +815,7 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                             <tr>
                               <td>
                                 <code>
-                                <em>fullTransactions</em>
+                                <em>withTransactions</em>
                                 </code>
                               </td>
                               <td>
@@ -800,9 +837,9 @@ it sets the constant to the given value. To reset the constant use <code>resetCo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC16getBlockTemplate7address9extraDataAA0dE0VSgSSSg_SStKF"></a>
-                    <a name="//apple_ref/swift/Method/getBlockTemplate(address:extraData:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC16getBlockTemplate7address9extraDataAA0dE0VSgSSSg_SStKF">getBlockTemplate(address:<wbr>extraData:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC16getBlockTemplate10forAddress13withExtraDataAA0dE0VSgSSSg_SStKF"></a>
+                    <a name="//apple_ref/swift/Method/getBlockTemplate(forAddress:withExtraData:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC16getBlockTemplate10forAddress13withExtraDataAA0dE0VSgSSSg_SStKF">getBlockTemplate(forAddress:<wbr>withExtraData:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -818,7 +855,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTemplate</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">extraData</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/BlockTemplate.html">BlockTemplate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTemplate</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">withExtraData</span> <span class="nv">extraData</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/BlockTemplate.html">BlockTemplate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -863,9 +900,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC30getBlockTransactionCountByHashySiSgSSKF"></a>
-                    <a name="//apple_ref/swift/Method/getBlockTransactionCountByHash(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC30getBlockTransactionCountByHashySiSgSSKF">getBlockTransactionCountByHash(_:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC24getBlockTransactionCount7forHashSiSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getBlockTransactionCount(forHash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC24getBlockTransactionCount7forHashSiSgSS_tKF">getBlockTransactionCount(forHash:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -880,7 +917,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTransactionCountByHash</span><span class="p">(</span><span class="n">_</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTransactionCount</span><span class="p">(</span><span class="n">forHash</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -913,9 +950,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC32getBlockTransactionCountByNumber6heightSiSgSi_tKF"></a>
-                    <a name="//apple_ref/swift/Method/getBlockTransactionCountByNumber(height:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC32getBlockTransactionCountByNumber6heightSiSgSi_tKF">getBlockTransactionCountByNumber(height:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC24getBlockTransactionCount8atHeightSiSgSi_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getBlockTransactionCount(atHeight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC24getBlockTransactionCount8atHeightSiSgSi_tKF">getBlockTransactionCount(atHeight:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -930,7 +967,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTransactionCountByNumber</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBlockTransactionCount</span><span class="p">(</span><span class="n">atHeight</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -963,9 +1000,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC33getTransactionByBlockHashAndIndex4hash5indexAA0D0VSgSS_SitKF"></a>
-                    <a name="//apple_ref/swift/Method/getTransactionByBlockHashAndIndex(hash:index:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC33getTransactionByBlockHashAndIndex4hash5indexAA0D0VSgSS_SitKF">getTransactionByBlockHashAndIndex(hash:<wbr>index:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC21getTransactionInBlock7forHash5indexAA0D0VSgSS_SitKF"></a>
+                    <a name="//apple_ref/swift/Method/getTransactionInBlock(forHash:index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC21getTransactionInBlock7forHash5indexAA0D0VSgSS_SitKF">getTransactionInBlock(forHash:<wbr>index:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -980,7 +1017,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionByBlockHashAndIndex</span><span class="p">(</span><span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionInBlock</span><span class="p">(</span><span class="n">forHash</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1025,9 +1062,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC35getTransactionByBlockNumberAndIndex6height5indexAA0D0VSgSi_SitKF"></a>
-                    <a name="//apple_ref/swift/Method/getTransactionByBlockNumberAndIndex(height:index:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC35getTransactionByBlockNumberAndIndex6height5indexAA0D0VSgSi_SitKF">getTransactionByBlockNumberAndIndex(height:<wbr>index:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC21getTransactionInBlock8atHeight5indexAA0D0VSgSi_SitKF"></a>
+                    <a name="//apple_ref/swift/Method/getTransactionInBlock(atHeight:index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC21getTransactionInBlock8atHeight5indexAA0D0VSgSi_SitKF">getTransactionInBlock(atHeight:<wbr>index:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1042,7 +1079,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionByBlockNumberAndIndex</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionInBlock</span><span class="p">(</span><span class="n">atHeight</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1087,9 +1124,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC20getTransactionByHashyAA0D0VSgSSKF"></a>
-                    <a name="//apple_ref/swift/Method/getTransactionByHash(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC20getTransactionByHashyAA0D0VSgSSKF">getTransactionByHash(_:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC14getTransaction7forHashAA0D0VSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getTransaction(forHash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC14getTransaction7forHashAA0D0VSgSS_tKF">getTransaction(forHash:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1104,7 +1141,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionByHash</span><span class="p">(</span><span class="n">_</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransaction</span><span class="p">(</span><span class="n">forHash</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1137,9 +1174,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC21getTransactionReceipt4hashAA0dE0VSgSS_tKF"></a>
-                    <a name="//apple_ref/swift/Method/getTransactionReceipt(hash:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC21getTransactionReceipt4hashAA0dE0VSgSS_tKF">getTransactionReceipt(hash:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC21getTransactionReceipt7forHashAA0dE0VSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getTransactionReceipt(forHash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC21getTransactionReceipt7forHashAA0dE0VSgSS_tKF">getTransactionReceipt(forHash:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1154,7 +1191,7 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionReceipt</span><span class="p">(</span><span class="nv">hash</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionReceipt.html">TransactionReceipt</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionReceipt</span><span class="p">(</span><span class="n">forHash</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionReceipt.html">TransactionReceipt</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1187,9 +1224,9 @@ If <code>address</code> and <code>extraData</code> are provided the values are o
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC24getTransactionsByAddress_08numberOfD0SayAA11TransactionVGSgSS_SiSgtKF"></a>
-                    <a name="//apple_ref/swift/Method/getTransactionsByAddress(_:numberOfTransactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC24getTransactionsByAddress_08numberOfD0SayAA11TransactionVGSgSS_SiSgtKF">getTransactionsByAddress(_:<wbr>numberOfTransactions:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC15getTransactions10forAddress08numberOfD0SayAA11TransactionVGSgSS_SiSgtKF"></a>
+                    <a name="//apple_ref/swift/Method/getTransactions(forAddress:numberOfTransactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC15getTransactions10forAddress08numberOfD0SayAA11TransactionVGSgSS_SiSgtKF">getTransactions(forAddress:<wbr>numberOfTransactions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1205,7 +1242,7 @@ Note that this information might change when blocks are rewinded on the local st
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactionsByAddress</span><span class="p">(</span><span class="n">_</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span><span class="p">,</span> <span class="nv">numberOfTransactions</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTransactions</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">numberOfTransactions</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -1250,9 +1287,9 @@ Note that this information might change when blocks are rewinded on the local st
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC7getWork7address9extraDataAA0D12InstructionsVSgSSSg_SStKF"></a>
-                    <a name="//apple_ref/swift/Method/getWork(address:extraData:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC7getWork7address9extraDataAA0D12InstructionsVSgSSSg_SStKF">getWork(address:<wbr>extraData:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC7getWork10forAddress13withExtraDataAA0D12InstructionsVSgSSSg_SStKF"></a>
+                    <a name="//apple_ref/swift/Method/getWork(forAddress:withExtraData:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC7getWork10forAddress13withExtraDataAA0D12InstructionsVSgSSSg_SStKF">getWork(forAddress:<wbr>withExtraData:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1267,7 +1304,7 @@ Note that this information might change when blocks are rewinded on the local st
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getWork</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient7Addressa">Address</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">extraData</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/WorkInstructions.html">WorkInstructions</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getWork</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">withExtraData</span> <span class="nv">extraData</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/WorkInstructions.html">WorkInstructions</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1343,9 +1380,9 @@ Note that this information might change when blocks are rewinded on the local st
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC3log3tag5levelSbSgSS_AA8LogLevelOtKF"></a>
-                    <a name="//apple_ref/swift/Method/log(tag:level:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC3log3tag5levelSbSgSS_AA8LogLevelOtKF">log(tag:<wbr>level:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC6setLog3tag2toSbSgSS_AA0D5LevelOtKF"></a>
+                    <a name="//apple_ref/swift/Method/setLog(tag:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC6setLog3tag2toSbSgSS_AA0D5LevelOtKF">setLog(tag:<wbr>to:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1360,7 +1397,7 @@ Note that this information might change when blocks are rewinded on the local st
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">log</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">level</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogLevel.html">LogLevel</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setLog</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">to</span> <span class="nv">level</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogLevel.html">LogLevel</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1436,9 +1473,9 @@ Note that this information might change when blocks are rewinded on the local st
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC14mempoolContent16fullTransactionsSayypGSgSbSg_tKF"></a>
-                    <a name="//apple_ref/swift/Method/mempoolContent(fullTransactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC14mempoolContent16fullTransactionsSayypGSgSbSg_tKF">mempoolContent(fullTransactions:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC14mempoolContent16withTransactionsSayypGSgSbSg_tKF"></a>
+                    <a name="//apple_ref/swift/Method/mempoolContent(withTransactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC14mempoolContent16withTransactionsSayypGSgSbSg_tKF">mempoolContent(withTransactions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1453,7 +1490,7 @@ Note that this information might change when blocks are rewinded on the local st
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">mempoolContent</span><span class="p">(</span><span class="nv">fullTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">mempoolContent</span><span class="p">(</span><span class="nv">withTransactions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -1464,7 +1501,7 @@ Note that this information might change when blocks are rewinded on the local st
                             <tr>
                               <td>
                                 <code>
-                                <em>fullTransactions</em>
+                                <em>withTransactions</em>
                                 </code>
                               </td>
                               <td>
@@ -1517,9 +1554,9 @@ Note that this information might change when blocks are rewinded on the local st
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC12minerThreadsySiSgADKF"></a>
-                    <a name="//apple_ref/swift/Method/minerThreads(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC12minerThreadsySiSgADKF">minerThreads(_:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC12minerThreadsSiSgyKF"></a>
+                    <a name="//apple_ref/swift/Method/minerThreads()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC12minerThreadsSiSgyKF">minerThreads()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1527,16 +1564,45 @@ Note that this information might change when blocks are rewinded on the local st
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns or sets the number of CPU threads for the miner.
-When no parameter is given, it returns the current number of miner threads.
-When a value is given as parameter, it sets the number of miner threads to that value.</p>
+                        <p>Returns the number of CPU threads for the miner.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">minerThreads</span><span class="p">(</span><span class="n">_</span> <span class="nv">threads</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">minerThreads</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The number of threads allocated for mining.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC15setMinerThreads2toSiSgSi_tKF"></a>
+                    <a name="//apple_ref/swift/Method/setMinerThreads(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC15setMinerThreads2toSiSgSi_tKF">setMinerThreads(to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the number of CPU threads for the miner.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMinerThreads</span><span class="p">(</span><span class="n">to</span> <span class="nv">threads</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1561,7 +1627,7 @@ When a value is given as parameter, it sets the number of miner threads to that 
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The number of threads allocated for mining.</p>
+                        <p>The new number of threads allocated for mining.</p>
                       </div>
                     </section>
                   </div>
@@ -1569,9 +1635,9 @@ When a value is given as parameter, it sets the number of miner threads to that 
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC13minFeePerByte3feeSiSgAE_tKF"></a>
-                    <a name="//apple_ref/swift/Method/minFeePerByte(fee:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC13minFeePerByte3feeSiSgAE_tKF">minFeePerByte(fee:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC13minFeePerByteSiSgyKF"></a>
+                    <a name="//apple_ref/swift/Method/minFeePerByte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC13minFeePerByteSiSgyKF">minFeePerByte()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1579,16 +1645,45 @@ When a value is given as parameter, it sets the number of miner threads to that 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns or sets the minimum fee per byte.
-When no parameter is given, it returns the current minimum fee per byte.
-When a value is given as parameter, it sets the minimum fee per byte to that value.</p>
+                        <p>Returns the minimum fee per byte.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">minFeePerByte</span><span class="p">(</span><span class="nv">fee</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">minFeePerByte</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new minimum fee per byte.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC16setMinFeePerByte2toSiSgSi_tKF"></a>
+                    <a name="//apple_ref/swift/Method/setMinFeePerByte(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC16setMinFeePerByte2toSiSgSi_tKF">setMinFeePerByte(to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the minimum fee per byte.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMinFeePerByte</span><span class="p">(</span><span class="n">to</span> <span class="nv">fee</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1621,9 +1716,9 @@ When a value is given as parameter, it sets the minimum fee per byte to that val
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC6mining5stateSbSgAE_tKF"></a>
-                    <a name="//apple_ref/swift/Method/mining(state:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC6mining5stateSbSgAE_tKF">mining(state:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC8isMiningSbSgyKF"></a>
+                    <a name="//apple_ref/swift/Method/isMining()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC8isMiningSbSgyKF">isMining()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1631,16 +1726,45 @@ When a value is given as parameter, it sets the minimum fee per byte to that val
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns true if client is actively mining new blocks.
-When no parameter is given, it returns the current state.
-When a value is given as parameter, it sets the current state to that value.</p>
+                        <p>Returns true if client is actively mining new blocks.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">mining</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMining</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the client is mining, otherwise <code>false</code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC9setMining2toSbSgSb_tKF"></a>
+                    <a name="//apple_ref/swift/Method/setMining(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC9setMining2toSbSgSb_tKF">setMining(to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the client mining state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMining</span><span class="p">(</span><span class="n">to</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1735,9 +1859,9 @@ When a value is given as parameter, it sets the current state to that value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC9peerState7address7commandAA4PeerVSgSS_AA0gD7CommandOSgtKF"></a>
-                    <a name="//apple_ref/swift/Method/peerState(address:command:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC9peerState7address7commandAA4PeerVSgSS_AA0gD7CommandOSgtKF">peerState(address:<wbr>command:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC9peerState10forAddressAA4PeerVSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/peerState(forAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC9peerState10forAddressAA4PeerVSgSS_tKF">peerState(forAddress:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1745,16 +1869,64 @@ When a value is given as parameter, it sets the current state to that value.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the state of the peer.
-When no command is given, it returns peer state.
-When a value is given for command, it sets the peer state to that value.</p>
+                        <p>Returns the state of the peer.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerState</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">command</span><span class="p">:</span> <span class="kt"><a href="../Enums/PeerStateCommand.html">PeerStateCommand</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Peer.html">Peer</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerState</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Peer.html">Peer</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The address of the peer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The current state of the peer.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC12setPeerState10forAddress2toAA0D0VSgSS_AA0dE7CommandOtKF"></a>
+                    <a name="//apple_ref/swift/Method/setPeerState(forAddress:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC12setPeerState10forAddress2toAA0D0VSgSS_AA0dE7CommandOtKF">setPeerState(forAddress:<wbr>to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the state of the peer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPeerState</span><span class="p">(</span><span class="n">forAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">to</span> <span class="nv">command</span><span class="p">:</span> <span class="kt"><a href="../Enums/PeerStateCommand.html">PeerStateCommand</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Peer.html">Peer</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1791,7 +1963,7 @@ When a value is given for command, it sets the peer state to that value.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The current state of the peer.</p>
+                        <p>The new state of the peer.</p>
                       </div>
                     </section>
                   </div>
@@ -1799,9 +1971,9 @@ When a value is given for command, it sets the peer state to that value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC4pool7addressSSSgypSg_tKF"></a>
-                    <a name="//apple_ref/swift/Method/pool(address:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC4pool7addressSSSgypSg_tKF">pool(address:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC4poolSSSgyKF"></a>
+                    <a name="//apple_ref/swift/Method/pool()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC4poolSSSgyKF">pool()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1809,16 +1981,45 @@ When a value is given for command, it sets the peer state to that value.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns or sets the mining pool.
-When no parameter is given, it returns the current mining pool.
-When a value is given as parameter, it sets the mining pool to that value.</p>
+                        <p>Returns the mining pool.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pool</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pool</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The mining pool connection string, or <code>nil</code> if not enabled.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11NimiqClientAAC7setPool9toAddressSSSgyp_tKF"></a>
+                    <a name="//apple_ref/swift/Method/setPool(toAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC7setPool9toAddressSSSgyp_tKF">setPool(toAddress:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the mining pool.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPool</span><span class="p">(</span><span class="n">toAddress</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1843,7 +2044,7 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The mining pool connection string, or <code>nil</code> if not enabled.</p>
+                        <p>The new mining pool connection string, or <code>nil</code> if not enabled.</p>
                       </div>
                     </section>
                   </div>
@@ -1930,7 +2131,7 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendRawTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendRawTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1980,7 +2181,7 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:11NimiqClient4Hasha">Hash</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/OutgoingTransaction.html">OutgoingTransaction</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -2095,9 +2296,9 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11NimiqClientAAC21getRawTransactionInfo11transactionAA0E0VSgSS_tKF"></a>
-                    <a name="//apple_ref/swift/Method/getRawTransactionInfo(transaction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11NimiqClientAAC21getRawTransactionInfo11transactionAA0E0VSgSS_tKF">getRawTransactionInfo(transaction:<wbr>)</a>
+                    <a name="/s:11NimiqClientAAC21getRawTransactionInfo4fromAA0E0VSgSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/getRawTransactionInfo(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11NimiqClientAAC21getRawTransactionInfo4fromAA0E0VSgSS_tKF">getRawTransactionInfo(from:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2112,7 +2313,7 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRawTransactionInfo</span><span class="p">(</span><span class="nv">transaction</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRawTransactionInfo</span><span class="p">(</span><span class="n">from</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Transaction.html">Transaction</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -2197,7 +2398,7 @@ When a value is given as parameter, it sets the mining pool to that value.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/rraallvv/NimiqClientSwift" target="_blank" rel="external">Nimiq Comunity</a>. All rights reserved. (Last updated: 2020-08-15)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/rraallvv/NimiqClientSwift" target="_blank" rel="external">Nimiq Comunity</a>. All rights reserved. (Last updated: 2020-08-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

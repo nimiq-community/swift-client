@@ -108,7 +108,7 @@ internal struct RawAccount: Decodable {
     let type: AccountType
 
     let account: Account
-    
+
     enum CodingKeys: CodingKey {
         case type
     }

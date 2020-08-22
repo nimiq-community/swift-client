@@ -104,7 +104,7 @@ final class NimiqClientTests: XCTestCase {
     func test_peerNormal() {
         URLProtocolStub.testData = NimiqClientTests.peerStateNormal()
 
-        let result = try? client.peerState(address: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e")
+        let result = try? client.peerState(forAddress: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e")
 
         XCTAssertEqual("peerState", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", URLProtocolStub.latestRequestParams![0] as? String)
@@ -119,7 +119,7 @@ final class NimiqClientTests: XCTestCase {
     func test_peerFailed() {
         URLProtocolStub.testData = NimiqClientTests.peerStateFailed()
 
-        let result = try? client.peerState(address: "wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0")
+        let result = try? client.peerState(forAddress: "wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0")
 
         XCTAssertEqual("peerState", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0", URLProtocolStub.latestRequestParams![0] as? String)
@@ -134,7 +134,7 @@ final class NimiqClientTests: XCTestCase {
     func test_peerError() {
         URLProtocolStub.testData = NimiqClientTests.peerStateError()
 
-        XCTAssertThrowsError(try client.peerState(address: "unknown")) { error in
+        XCTAssertThrowsError(try client.peerState(forAddress: "unknown")) { error in
             guard case Error.remoteError( _) = error else {
                 return XCTFail()
             }
@@ -144,7 +144,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setPeerNormal() {
         URLProtocolStub.testData = NimiqClientTests.peerStateNormal()
 
-        let result = try? client.peerState(address: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", command: PeerStateCommand.connect)
+        let result = try? client.setPeerState(forAddress: "wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", to: PeerStateCommand.connect)
 
         XCTAssertEqual("peerState", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", URLProtocolStub.latestRequestParams![0] as? String)
@@ -180,7 +180,7 @@ final class NimiqClientTests: XCTestCase {
             fee: 1
         )
 
-        let result = try? client.createRawTransaction(transaction)
+        let result = try? client.createRawTransaction(from: transaction)
 
         XCTAssertEqual("createRawTransaction", URLProtocolStub.latestRequestMethod!)
 
@@ -231,7 +231,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getRawTransactionInfo() {
         URLProtocolStub.testData = NimiqClientTests.getRawTransactionInfoBasic()
 
-        let result = try? client.getRawTransactionInfo(transaction: "00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802")
+        let result = try? client.getRawTransactionInfo(from: "00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802")
 
         XCTAssertEqual("getRawTransactionInfo", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802", URLProtocolStub.latestRequestParams![0] as? String)
@@ -249,7 +249,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByBlockHashAndIndex() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
-        let result = try? client.getTransactionByBlockHashAndIndex(hash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 0)
+        let result = try? client.getTransactionInBlock(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 0)
 
         XCTAssertEqual("getTransactionByBlockHashAndIndex", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -270,7 +270,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByBlockHashAndIndexWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
-        let result = try? client.getTransactionByBlockHashAndIndex(hash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 5)
+        let result = try? client.getTransactionInBlock(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", index: 5)
 
         XCTAssertEqual("getTransactionByBlockHashAndIndex", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -282,7 +282,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByBlockNumberAndIndex() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
-        let result = try? client.getTransactionByBlockNumberAndIndex(height: 11608, index: 0)
+        let result = try? client.getTransactionInBlock(atHeight: 11608, index: 0)
 
         XCTAssertEqual("getTransactionByBlockNumberAndIndex", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -303,7 +303,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByBlockNumberAndIndexWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
-        let result = try? client.getTransactionByBlockNumberAndIndex(height: 11608, index: 0)
+        let result = try? client.getTransactionInBlock(atHeight: 11608, index: 0)
 
         XCTAssertEqual("getTransactionByBlockNumberAndIndex", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -315,7 +315,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByHash() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionFull()
 
-        let result = try? client.getTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
+        let result = try? client.getTransaction(forHash: "78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
 
         XCTAssertEqual("getTransactionByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", URLProtocolStub.latestRequestParams![0] as? String)
@@ -334,7 +334,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByHashWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionNotFound()
 
-        let result = try? client.getTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
+        let result = try? client.getTransaction(forHash: "78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430")
 
         XCTAssertEqual("getTransactionByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", URLProtocolStub.latestRequestParams![0] as? String)
@@ -345,7 +345,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionByHashForContractCreation() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionContractCreation()
 
-        let result = try? client.getTransactionByHash("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2")
+        let result = try? client.getTransaction(forHash: "539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2")
 
         XCTAssertEqual("getTransactionByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2", URLProtocolStub.latestRequestParams![0] as? String)
@@ -369,7 +369,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionReceipt() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionReceiptFound()
 
-        let result = try? client.getTransactionReceipt(hash: "fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e")
+        let result = try? client.getTransactionReceipt(forHash: "fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e")
 
         XCTAssertEqual("getTransactionReceipt", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e", URLProtocolStub.latestRequestParams![0] as? String)
@@ -386,7 +386,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionReceiptWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionReceiptNotFound()
 
-        let result = try? client.getTransactionReceipt(hash: "unknown")
+        let result = try? client.getTransactionReceipt(forHash: "unknown")
 
         XCTAssertEqual("getTransactionReceipt", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("unknown", URLProtocolStub.latestRequestParams![0] as? String)
@@ -397,7 +397,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionsByAddress() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionsFound()
 
-        let result = try? client.getTransactionsByAddress("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
+        let result = try? client.getTransactions(forAddress: "NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
 
         XCTAssertEqual("getTransactionsByAddress", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", URLProtocolStub.latestRequestParams![0] as? String)
@@ -414,7 +414,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getTransactionsByAddressWhenNoFound() {
         URLProtocolStub.testData = NimiqClientTests.getTransactionsNotFound()
 
-        let result = try? client.getTransactionsByAddress("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
+        let result = try? client.getTransactions(forAddress: "NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F")
 
         XCTAssertEqual("getTransactionsByAddress", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", URLProtocolStub.latestRequestParams![0] as? String)
@@ -442,7 +442,7 @@ final class NimiqClientTests: XCTestCase {
     func test_mempoolContentFullTransactions() {
         URLProtocolStub.testData = NimiqClientTests.mempoolContentFullTransactions()
 
-        let result = try? client.mempoolContent(fullTransactions: true)
+        let result = try? client.mempoolContent(withTransactions: true)
 
         XCTAssertEqual("mempoolContent", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(true, URLProtocolStub.latestRequestParams![0] as? Bool)
@@ -495,7 +495,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setMinFeePerByte() {
         URLProtocolStub.testData = NimiqClientTests.minFeePerByte()
 
-        let result = try? client.minFeePerByte(fee: 0)
+        let result = try? client.setMinFeePerByte(to: 0)
 
         XCTAssertEqual("minFeePerByte", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(0, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -506,7 +506,7 @@ final class NimiqClientTests: XCTestCase {
     func test_mining() {
         URLProtocolStub.testData = NimiqClientTests.miningState()
 
-        let result = try? client.mining()
+        let result = try? client.isMining()
 
         XCTAssertEqual("mining", URLProtocolStub.latestRequestMethod!)
 
@@ -516,7 +516,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setMining() {
         URLProtocolStub.testData = NimiqClientTests.miningState()
 
-        let result = try? client.mining(state: false)
+        let result = try? client.setMining(to: false)
 
         XCTAssertEqual("mining", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(false, URLProtocolStub.latestRequestParams![0] as? Bool)
@@ -547,7 +547,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setMinerThreads() {
         URLProtocolStub.testData = NimiqClientTests.minerThreads()
 
-        let result = try? client.minerThreads(2)
+        let result = try? client.setMinerThreads(to: 2)
 
         XCTAssertEqual("minerThreads", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(2, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -578,7 +578,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setPool() {
         URLProtocolStub.testData = NimiqClientTests.poolSushipool()
 
-        let result = try? client.pool(address: "us.sushipool.com:443")
+        let result = try? client.setPool(toAddress: "us.sushipool.com:443")
 
         XCTAssertEqual("pool", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("us.sushipool.com:443", URLProtocolStub.latestRequestParams![0] as? String)
@@ -632,7 +632,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getWorkWithOverride() {
         URLProtocolStub.testData = NimiqClientTests.getWork()
 
-        let result = try? client.getWork(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", extraData: "")
+        let result = try? client.getWork(forAddress: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", withExtraData: "")
 
         XCTAssertEqual("getWork", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", URLProtocolStub.latestRequestParams![0] as? String)
@@ -659,7 +659,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockTemplateWithOverride() {
         URLProtocolStub.testData = NimiqClientTests.getWorkBlockTemplate()
 
-        let result = try? client.getBlockTemplate(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", extraData: "")
+        let result = try? client.getBlockTemplate(forAddress: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", withExtraData: "")
 
         XCTAssertEqual("getBlockTemplate", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", URLProtocolStub.latestRequestParams![0] as? String)
@@ -743,7 +743,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBalance() {
         URLProtocolStub.testData = NimiqClientTests.getBalance()
 
-        let result = try? client.getBalance(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
+        let result = try? client.getBalance(forAddress: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
         XCTAssertEqual("getBalance", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", URLProtocolStub.latestRequestParams![0] as? String)
@@ -754,7 +754,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getAccount() {
         URLProtocolStub.testData = NimiqClientTests.getAccountBasic()
 
-        let result = try? client.getAccount(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
+        let result = try? client.getAccount(forAddress: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
         XCTAssertEqual("getAccount", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", URLProtocolStub.latestRequestParams![0] as? String)
@@ -770,7 +770,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getAccountForVestingContract() {
         URLProtocolStub.testData = NimiqClientTests.getAccountVesting()
 
-        let result = try? client.getAccount(address: "NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF")
+        let result = try? client.getAccount(forAddress: "NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF")
 
         XCTAssertEqual("getAccount", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF", URLProtocolStub.latestRequestParams![0] as? String)
@@ -792,7 +792,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getAccountForHashedTimeLockedContract() {
         URLProtocolStub.testData = NimiqClientTests.getAccountVestingHtlc()
 
-        let result = try? client.getAccount(address: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
+        let result = try? client.getAccount(forAddress: "NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET")
 
         XCTAssertEqual("getAccount", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", URLProtocolStub.latestRequestParams![0] as? String)
@@ -827,7 +827,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockTransactionCountByHash() {
         URLProtocolStub.testData = NimiqClientTests.blockTransactionCountFound()
 
-        let result = try? client.getBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
+        let result = try? client.getBlockTransactionCount(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
         XCTAssertEqual("getBlockTransactionCountByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -838,7 +838,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockTransactionCountByHashWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.blockTransactionCountNotFound()
 
-        let result = try? client.getBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
+        let result = try? client.getBlockTransactionCount(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
         XCTAssertEqual("getBlockTransactionCountByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -849,7 +849,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockTransactionCountByNumber() {
         URLProtocolStub.testData = NimiqClientTests.blockTransactionCountFound()
 
-        let result = try? client.getBlockTransactionCountByNumber(height: 11608)
+        let result = try? client.getBlockTransactionCount(atHeight: 11608)
 
         XCTAssertEqual("getBlockTransactionCountByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -860,7 +860,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockTransactionCountByNumberWhenNotFound() {
         URLProtocolStub.testData = NimiqClientTests.blockTransactionCountNotFound()
 
-        let result = try? client.getBlockTransactionCountByNumber(height: 11608)
+        let result = try? client.getBlockTransactionCount(atHeight: 11608)
 
         XCTAssertEqual("getBlockTransactionCountByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -871,7 +871,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByHash() {
         URLProtocolStub.testData = NimiqClientTests.getBlockFound()
 
-        let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
+        let result = try? client.getBlock(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
         XCTAssertEqual("getBlockByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -890,7 +890,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByHashWithTransactions() {
         URLProtocolStub.testData = NimiqClientTests.getBlockWithTransactions()
 
-        let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", fullTransactions: true)
+        let result = try? client.getBlock(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", withTransactions: true)
 
         XCTAssertEqual("getBlockByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -909,7 +909,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByHashNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getBlockNotFound()
 
-        let result = try? client.getBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
+        let result = try? client.getBlock(forHash: "bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786")
 
         XCTAssertEqual("getBlockByHash", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", URLProtocolStub.latestRequestParams![0] as? String)
@@ -921,7 +921,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByNumber() {
         URLProtocolStub.testData = NimiqClientTests.getBlockFound()
 
-        let result = try? client.getBlockByNumber(height: 11608)
+        let result = try? client.getBlock(atHeight: 11608)
 
         XCTAssertEqual("getBlockByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -940,7 +940,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByNumberWithTransactions() {
         URLProtocolStub.testData = NimiqClientTests.getBlockWithTransactions()
 
-        let result = try? client.getBlockByNumber(height: 11608, fullTransactions: true)
+        let result = try? client.getBlock(atHeight: 11608, withTransactions: true)
 
         XCTAssertEqual("getBlockByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -959,7 +959,7 @@ final class NimiqClientTests: XCTestCase {
     func test_getBlockByNumberNotFound() {
         URLProtocolStub.testData = NimiqClientTests.getBlockNotFound()
 
-        let result = try? client.getBlockByNumber(height: 11608)
+        let result = try? client.getBlock(atHeight: 11608)
 
         XCTAssertEqual("getBlockByNumber", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual(11608, URLProtocolStub.latestRequestParams![0] as? Int)
@@ -982,7 +982,7 @@ final class NimiqClientTests: XCTestCase {
     func test_setConstant() {
         URLProtocolStub.testData = NimiqClientTests.constant()
 
-        let result = try? client.constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", value: 10)
+        let result = try? client.setConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", to: 10)
 
         XCTAssertEqual("constant", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", URLProtocolStub.latestRequestParams![0] as? String)
@@ -1006,7 +1006,7 @@ final class NimiqClientTests: XCTestCase {
     func test_log() {
         URLProtocolStub.testData = NimiqClientTests.log()
 
-        let result = try? client.log(tag: "*", level: LogLevel.verbose)
+        let result = try? client.setLog(tag: "*", to: LogLevel.verbose)
 
         XCTAssertEqual("log", URLProtocolStub.latestRequestMethod!)
         XCTAssertEqual("*", URLProtocolStub.latestRequestParams![0] as? String)
