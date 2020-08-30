@@ -40,8 +40,8 @@
 		OBJ_28 /* NimiqClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* NimiqClient.swift */; };
 		OBJ_35 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_46 /* NimiqClientTests+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* NimiqClientTests+Node.swift */; };
-		OBJ_47 /* NimiqClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* NimiqClientTests.swift */; };
-		OBJ_48 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* URLProtocolStub.swift */; };
+		OBJ_47 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Tests.swift */; };
+		OBJ_48 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Mock.swift */; };
 		OBJ_49 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
 		OBJ_51 /* NimiqClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; };
 /* End PBXBuildFile section */
@@ -112,8 +112,8 @@
 		"NimiqClient::NimiqClient::Product" /* NimiqClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NimiqClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"NimiqClient::NimiqClientTests::Product" /* NimiqClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = NimiqClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_12 /* NimiqClientTests+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Node.swift"; sourceTree = "<group>"; };
-		OBJ_13 /* NimiqClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimiqClientTests.swift; sourceTree = "<group>"; };
-		OBJ_14 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_20 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_21 /* NimiqClient.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NimiqClient.podspec; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				E49ABA9924DDF0A100288D96 /* Fixtures */,
-				OBJ_13 /* NimiqClientTests.swift */,
-				OBJ_14 /* URLProtocolStub.swift */,
+				OBJ_13 /* Tests.swift */,
+				OBJ_14 /* Mock.swift */,
 				OBJ_15 /* XCTestManifests.swift */,
 			);
 			name = NimiqClientTests;
@@ -402,9 +402,9 @@
 				OBJ_46 /* NimiqClientTests+Node.swift in Sources */,
 				E423387C24DDF47100A9028C /* NimiqClientTests+Transaction.swift in Sources */,
 				E423388024DDF63900A9028C /* NimiqClientTests+Miner.swift in Sources */,
-				OBJ_47 /* NimiqClientTests.swift in Sources */,
+				OBJ_47 /* Tests.swift in Sources */,
 				E423388424DDF71F00A9028C /* NimiqClientTests+Peer.swift in Sources */,
-				OBJ_48 /* URLProtocolStub.swift in Sources */,
+				OBJ_48 /* Mock.swift in Sources */,
 				OBJ_49 /* XCTestManifests.swift in Sources */,
 				E423388224DDF6AA00A9028C /* NimiqClientTests+MemPool.swift in Sources */,
 				E423387E24DDF52E00A9028C /* NimiqClientTests+Block.swift in Sources */,

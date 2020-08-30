@@ -1,6 +1,6 @@
 import Foundation
 
-extension NimiqClientTests {
+extension Tests {
 
     static func minerAddress() -> Data {
         return """

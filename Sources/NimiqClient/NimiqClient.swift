@@ -83,14 +83,10 @@ public class NimiqClient {
     /// - Parameter host: Host IP address.
     /// - Parameter port: Host port.
     /// - Parameter session: Used to make all requests. If ommited the shared URLSession is used.
-    public init(scheme: String = "http", user: String = "", password: String = "", host: String = "127.0.0.1", port: Int = 8648, session: URLSession? = nil){
+    public init(scheme: String = "http", user: String = "", password: String = "", host: String = "127.0.0.1", port: Int = 8648){
         self.url = "\(scheme)://\(host):\(port)"
         self.auth = "\(user):\(password)".data(using: String.Encoding.utf8)!.base64EncodedString()
-        if session != nil {
-            self.session = session!
-        } else {
-            self.session = URLSession.shared
-        }
+        self.session = URLSession.shared
     }
 
     /// Used in all JSONRPC requests to fetch the data.
