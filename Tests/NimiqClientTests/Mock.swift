@@ -37,7 +37,7 @@ public class Mock : URLSessionDataTask {
 
     /// Exchange implementation of  dataTask method in URLSession with `swizzledDataTaskWithRequest`
     static func doSwizzling() {
-        let originalSelector = Selector("dataTaskWithRequest:completionHandler:")
+        let originalSelector = #selector(URLSession.dataTask(with:completionHandler:) as (URLSession) -> (URLRequest, @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask)
         let swizzledSelector = #selector(Mock.swizzledDataTaskWithRequest(with:completionHandler:))
 
         let originalMethod = class_getInstanceMethod(URLSession.self, originalSelector)!
