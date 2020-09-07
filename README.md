@@ -1,11 +1,10 @@
-Nimiq Swift Client
-==================
+# Nimiq Swift Client
 
 > Swift implementation of the Nimiq RPC client specs.
 
 ## Usage
 
-Initialize a `NimiqClient` object using predefined configuration.
+Initialize a `NimiqClient` object using predefined configuration and get the current block number.
 
 ```swift
 let config = Config(
@@ -17,26 +16,19 @@ let config = Config(
 )
 
 let client = NimiqClient(config: config)
-```
 
-Once the client have been set up, we can call the methodes with the appropiate arguments to make requests to the Nimiq node.
-
-When no `config` object is passed in the initialization it will use default values in the Nimiq node.
-
-```swift
-let client = NimiqClient()
-
-// make rpc call to get the block number
+// make rpc call to get current block number
 let blockNumber = try client.blockNumber()!
-
-print(blockNumber) // displays the block number, for example 748883
+print(blockNumber)
 ```
+
+Note: When no `config` object is passed in the initialization it will use default values in the Nimiq node.
 
 ## API
 
 The complete API documentation is available [here](https://rraallvv.github.io/swift-client/).
 
-Check out the [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for behind the scene RPC calls.
+Check out the original [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for the behind-the-scenes RPC calls.
 
 ## Installation
 
@@ -57,7 +49,7 @@ let package = Package(
 
 ### CocoaPods
 
-To use CocoaPods, add the following to your Podfile:
+To use CocoaPods, add the following to your `Podfile`:
 
 ```sh
 pod 'NimiqClient'
@@ -65,46 +57,50 @@ pod 'NimiqClient'
 
 ### Carthage
 
-To use Carthage, add the following to your Cartfile:
+To use Carthage, add the following to your `Cartfile`:
 
 ```sh
 github "nimiq-community/swift-client"
+```
+
+## Build
+
+After cloning the repository, open the project bundle `NimiqClient.xcodeproj` in Xcode.
+
+All done, happy coding!
+
+## Test
+
+You need a start a Testnet Nimiq node:
+
+```sh
+nodejs index.js --protocol=dumb --type=full --network=test --rpc
+```
+
+All tests are in the `/Tests` folder and can be run from Xcode.
+
+## Documentation
+
+The documentation is generated automatically with [Jazzy](https://github.com/realm/jazzy).
+
+To generate the documentation first install Jazzy:
+
+```sh
+gem install jazzy
+```
+
+Then generate the documentation running Jazzy from the repository root directory:
+
+```sh
+jazzy
 ```
 
 ## Contributions
 
 This implementation was originally contributed by [rraallvv](https://github.com/rraallvv/).
 
-Please send your contributions as pull requests.
-
-Refer to the [issue tracker](https://github.com/nimiq-community/swift-client/issues) for ideas.
-
-### Develop
-
-After cloning the repository, open the project bundle `NimiqClient.xcodeproj` in Xcode.
-
-All done, happy coding!
-
-### Testing
-
-All tests are in the `/Tests` folder and can be run from Xcode.
-
-### Documentation
-
-The documentation is generated automatically with [Jazzy](https://github.com/realm/jazzy).
-
-To generate the documentation first intall Jazzy:
-
-```sh
-$ gem install jazzy
-```
-
-Then generate the documentation running Jazzy from the repository root directory:
-
-```sh
-$ jazzy
-```
+Bug reports and pull requests are welcome! Please refer to the [issue tracker](https://github.com/nimiq-community/swift-client/issues) for ideas.
 
 ## License
 
-[Apache 2.0](LICENSE.md)
+[Apache 2.0](LICENSE)
