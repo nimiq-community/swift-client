@@ -1,0 +1,38 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    strategy:
+      matrix:
+        destination: [
+          'platform=macOS,arch=x86_64',
+          'platform=iOS Simulator,OS=13.6,name=iPhone 8',
+          'platform=iOS Simulator,OS=13.6,name=iPad (7th generation)',
+          'platform=tvOS Simulator,OS=13.4,name=Apple TV'
+        ]
+
+    steps:
+      - uses: actions/checkout@main
+      - name: Build and test
+        env: 
+          destination: ${{ matrix.destination }}
+        run: |
+          set -o pipefail
+          xcodebuild clean build test -project "NimiqClient.xcodeproj" -scheme "NimiqClient-Package" -destination "${destination}" -enableCodeCoverage YES  -resultBundlePath coverage/result.xcresult | xcpretty
+          xcrun xccov view --report --json coverage/result.xcresult > coverage/lcov.json
+          git clone --depth 1 --branch 0.0.5 https://github.com/trax-retail/xccov2lcov
+          cd xccov2lcov
+          swift run xccov2lcov ../coverage/lcov.json --include-targets NimiqClient.framework > ../coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

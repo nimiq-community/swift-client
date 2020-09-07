@@ -1,0 +1,842 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"NimiqClient::NimiqClientPackageTests::ProductTarget" /* NimiqClientPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_37 /* Build configuration list for PBXAggregateTarget "NimiqClientPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_40 /* PBXTargetDependency */,
+			);
+			name = NimiqClientPackageTests;
+			productName = NimiqClientPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		E423387C24DDF47100A9028C /* NimiqClientTests+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */; };
+		E423387E24DDF52E00A9028C /* NimiqClientTests+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */; };
+		E423388024DDF63900A9028C /* NimiqClientTests+Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */; };
+		E423388224DDF6AA00A9028C /* NimiqClientTests+MemPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */; };
+		E423388424DDF71F00A9028C /* NimiqClientTests+Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */; };
+		E425B40624D9EE7B00D7325E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425B40524D9EE7B00D7325E /* main.swift */; };
+		E425B40B24D9EE9A00D7325E /* NimiqClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; };
+		E425B40C24D9EE9A00D7325E /* NimiqClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E47AAF2524DDF3A2004799A7 /* NimiqClientTests+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */; };
+		E49ABA8B24DDE94C00288D96 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8A24DDE94C00288D96 /* Node.swift */; };
+		E49ABA8E24DDEB4800288D96 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8D24DDEB4800288D96 /* Account.swift */; };
+		E49ABA9024DDEBF100288D96 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA8F24DDEBF100288D96 /* Transaction.swift */; };
+		E49ABA9224DDEC3C00288D96 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9124DDEC3C00288D96 /* Block.swift */; };
+		E49ABA9424DDECAF00288D96 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9324DDECAF00288D96 /* Peer.swift */; };
+		E49ABA9624DDECFF00288D96 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9524DDECFF00288D96 /* Miner.swift */; };
+		E49ABA9824DDED7100288D96 /* MemPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49ABA9724DDED7100288D96 /* MemPool.swift */; };
+		OBJ_28 /* NimiqClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* NimiqClient.swift */; };
+		OBJ_35 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_46 /* NimiqClientTests+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* NimiqClientTests+Node.swift */; };
+		OBJ_47 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Tests.swift */; };
+		OBJ_48 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Mock.swift */; };
+		OBJ_49 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
+		OBJ_51 /* NimiqClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E425B3FC24D9E72600D7325E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "NimiqClient::NimiqClient";
+			remoteInfo = NimiqClient;
+		};
+		E425B3FE24D9EE1300D7325E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "NimiqClient::NimiqClientTests";
+			remoteInfo = NimiqClientTests;
+		};
+		E425B40D24D9EE9A00D7325E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "NimiqClient::NimiqClient";
+			remoteInfo = NimiqClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E425B40124D9EE7B00D7325E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		E425B40F24D9EE9B00D7325E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E425B40C24D9EE9A00D7325E /* NimiqClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Transaction.swift"; sourceTree = "<group>"; };
+		E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Block.swift"; sourceTree = "<group>"; };
+		E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Miner.swift"; sourceTree = "<group>"; };
+		E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+MemPool.swift"; sourceTree = "<group>"; };
+		E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Peer.swift"; sourceTree = "<group>"; };
+		E425B40324D9EE7B00D7325E /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
+		E425B40524D9EE7B00D7325E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E49ABA8A24DDE94C00288D96 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		E49ABA8D24DDEB4800288D96 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		E49ABA8F24DDEBF100288D96 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		E49ABA9124DDEC3C00288D96 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		E49ABA9324DDECAF00288D96 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		E49ABA9524DDECFF00288D96 /* Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miner.swift; sourceTree = "<group>"; };
+		E49ABA9724DDED7100288D96 /* MemPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemPool.swift; sourceTree = "<group>"; };
+		E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Account.swift"; sourceTree = "<group>"; };
+		"NimiqClient::NimiqClient::Product" /* NimiqClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NimiqClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"NimiqClient::NimiqClientTests::Product" /* NimiqClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = NimiqClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_12 /* NimiqClientTests+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NimiqClientTests+Node.swift"; sourceTree = "<group>"; };
+		OBJ_13 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_20 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_21 /* NimiqClient.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NimiqClient.podspec; sourceTree = "<group>"; };
+		OBJ_22 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* NimiqClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimiqClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E425B40024D9EE7B00D7325E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E425B40B24D9EE9A00D7325E /* NimiqClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_51 /* NimiqClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E425B40424D9EE7B00D7325E /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				E425B40524D9EE7B00D7325E /* main.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		E425B40A24D9EE9A00D7325E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E49ABA8C24DDEB2400288D96 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E49ABA8D24DDEB4800288D96 /* Account.swift */,
+				E49ABA9124DDEC3C00288D96 /* Block.swift */,
+				E49ABA9724DDED7100288D96 /* MemPool.swift */,
+				E49ABA9524DDECFF00288D96 /* Miner.swift */,
+				E49ABA8A24DDE94C00288D96 /* Node.swift */,
+				E49ABA9324DDECAF00288D96 /* Peer.swift */,
+				E49ABA8F24DDEBF100288D96 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E49ABA9924DDF0A100288D96 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				E4F1098B24DDF2C800F6C215 /* NimiqClientTests+Account.swift */,
+				E423387D24DDF52E00A9028C /* NimiqClientTests+Block.swift */,
+				E423388124DDF6AA00A9028C /* NimiqClientTests+MemPool.swift */,
+				E423387F24DDF63900A9028C /* NimiqClientTests+Miner.swift */,
+				OBJ_12 /* NimiqClientTests+Node.swift */,
+				E423388324DDF71F00A9028C /* NimiqClientTests+Peer.swift */,
+				E423387A24DDF46A00A9028C /* NimiqClientTests+Transaction.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* NimiqClientTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* NimiqClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				E49ABA9924DDF0A100288D96 /* Fixtures */,
+				OBJ_13 /* Tests.swift */,
+				OBJ_14 /* Mock.swift */,
+				OBJ_15 /* XCTestManifests.swift */,
+			);
+			name = NimiqClientTests;
+			path = Tests/NimiqClientTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"NimiqClient::NimiqClientTests::Product" /* NimiqClientTests.xctest */,
+				"NimiqClient::NimiqClient::Product" /* NimiqClient.framework */,
+				E425B40324D9EE7B00D7325E /* Example */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				E425B40424D9EE7B00D7325E /* Example */,
+				OBJ_16 /* Products */,
+				E425B40A24D9EE9A00D7325E /* Frameworks */,
+				OBJ_20 /* LICENSE */,
+				OBJ_21 /* NimiqClient.podspec */,
+				OBJ_22 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* NimiqClient */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* NimiqClient */ = {
+			isa = PBXGroup;
+			children = (
+				E49ABA8C24DDEB2400288D96 /* Models */,
+				OBJ_9 /* NimiqClient.swift */,
+			);
+			name = NimiqClient;
+			path = Sources/NimiqClient;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E425B40224D9EE7B00D7325E /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E425B40924D9EE7B00D7325E /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				E425B3FF24D9EE7B00D7325E /* Sources */,
+				E425B40024D9EE7B00D7325E /* Frameworks */,
+				E425B40124D9EE7B00D7325E /* CopyFiles */,
+				E425B40F24D9EE9B00D7325E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E425B40E24D9EE9A00D7325E /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = E425B40324D9EE7B00D7325E /* Example */;
+			productType = "com.apple.product-type.tool";
+		};
+		"NimiqClient::NimiqClient" /* NimiqClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_24 /* Build configuration list for PBXNativeTarget "NimiqClient" */;
+			buildPhases = (
+				OBJ_27 /* Sources */,
+				OBJ_29 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NimiqClient;
+			productName = NimiqClient;
+			productReference = "NimiqClient::NimiqClient::Product" /* NimiqClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"NimiqClient::NimiqClientTests" /* NimiqClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_42 /* Build configuration list for PBXNativeTarget "NimiqClientTests" */;
+			buildPhases = (
+				OBJ_45 /* Sources */,
+				OBJ_50 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_52 /* PBXTargetDependency */,
+			);
+			name = NimiqClientTests;
+			productName = NimiqClientTests;
+			productReference = "NimiqClient::NimiqClientTests::Product" /* NimiqClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"NimiqClient::SwiftPMPackageDescription" /* NimiqClientPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_31 /* Build configuration list for PBXNativeTarget "NimiqClientPackageDescription" */;
+			buildPhases = (
+				OBJ_34 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NimiqClientPackageDescription;
+			productName = NimiqClientPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1160;
+				TargetAttributes = {
+					E425B40224D9EE7B00D7325E = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "NimiqClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"NimiqClient::NimiqClient" /* NimiqClient */,
+				"NimiqClient::SwiftPMPackageDescription" /* NimiqClientPackageDescription */,
+				"NimiqClient::NimiqClientPackageTests::ProductTarget" /* NimiqClientPackageTests */,
+				"NimiqClient::NimiqClientTests" /* NimiqClientTests */,
+				E425B40224D9EE7B00D7325E /* Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E425B3FF24D9EE7B00D7325E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E425B40624D9EE7B00D7325E /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_28 /* NimiqClient.swift in Sources */,
+				E49ABA9824DDED7100288D96 /* MemPool.swift in Sources */,
+				E49ABA8E24DDEB4800288D96 /* Account.swift in Sources */,
+				E49ABA9224DDEC3C00288D96 /* Block.swift in Sources */,
+				E49ABA9024DDEBF100288D96 /* Transaction.swift in Sources */,
+				E49ABA8B24DDE94C00288D96 /* Node.swift in Sources */,
+				E49ABA9624DDECFF00288D96 /* Miner.swift in Sources */,
+				E49ABA9424DDECAF00288D96 /* Peer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_35 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				E47AAF2524DDF3A2004799A7 /* NimiqClientTests+Account.swift in Sources */,
+				OBJ_46 /* NimiqClientTests+Node.swift in Sources */,
+				E423387C24DDF47100A9028C /* NimiqClientTests+Transaction.swift in Sources */,
+				E423388024DDF63900A9028C /* NimiqClientTests+Miner.swift in Sources */,
+				OBJ_47 /* Tests.swift in Sources */,
+				E423388424DDF71F00A9028C /* NimiqClientTests+Peer.swift in Sources */,
+				OBJ_48 /* Mock.swift in Sources */,
+				OBJ_49 /* XCTestManifests.swift in Sources */,
+				E423388224DDF6AA00A9028C /* NimiqClientTests+MemPool.swift in Sources */,
+				E423387E24DDF52E00A9028C /* NimiqClientTests+Block.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E425B40E24D9EE9A00D7325E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "NimiqClient::NimiqClient" /* NimiqClient */;
+			targetProxy = E425B40D24D9EE9A00D7325E /* PBXContainerItemProxy */;
+		};
+		OBJ_40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "NimiqClient::NimiqClientTests" /* NimiqClientTests */;
+			targetProxy = E425B3FE24D9EE1300D7325E /* PBXContainerItemProxy */;
+		};
+		OBJ_52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "NimiqClient::NimiqClient" /* NimiqClient */;
+			targetProxy = E425B3FC24D9E72600D7325E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E425B40724D9EE7B00D7325E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E425B40824D9EE7B00D7325E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NimiqClient.xcodeproj/NimiqClient_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = NimiqClient;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = NimiqClient;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NimiqClient.xcodeproj/NimiqClient_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = NimiqClient;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = NimiqClient;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NimiqClient.xcodeproj/NimiqClientTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = NimiqClientTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NimiqClient.xcodeproj/NimiqClientTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = NimiqClientTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E425B40924D9EE7B00D7325E /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E425B40724D9EE7B00D7325E /* Debug */,
+				E425B40824D9EE7B00D7325E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "NimiqClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_24 /* Build configuration list for PBXNativeTarget "NimiqClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_25 /* Debug */,
+				OBJ_26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_31 /* Build configuration list for PBXNativeTarget "NimiqClientPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_32 /* Debug */,
+				OBJ_33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_37 /* Build configuration list for PBXAggregateTarget "NimiqClientPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_38 /* Debug */,
+				OBJ_39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_42 /* Build configuration list for PBXNativeTarget "NimiqClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_43 /* Debug */,
+				OBJ_44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
