@@ -26,7 +26,7 @@ Note: When no `config` object is passed in the initialization it will use defaul
 
 ## API
 
-The complete API documentation is available [here](https://rraallvv.github.io/swift-client/).
+The complete API documentation is available [here](https://nimiq-community.github.io/swift-client/).
 
 Check out the original [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for the behind-the-scenes RPC calls.
 
@@ -93,6 +93,12 @@ Then generate the documentation running Jazzy from the repository root directory
 
 ```sh
 jazzy
+```
+
+Add a blank file in the `/docs` folder with the name `.nojekyll` for the documentation hosted on GitHub Pages:
+
+```sh
+touch docs/.nojekyll
 ```
 
 ## Contributions
