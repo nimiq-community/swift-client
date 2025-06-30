@@ -2,6 +2,11 @@
 
 > Swift implementation of the Nimiq RPC client specs.
 
+This repository is archived: Nimiq PoS has been launched and this RPC client only supports the
+old PoW RPC specification. As of now, there is no Swift RPC client implementation. Please
+[contact us](mailto:community@nimiq.com) if you are interested in implementing and supporting the
+Nimiq ecosystem for Swift.
+
 ## Usage
 
 Initialize a `NimiqClient` object using predefined configuration and get the current block number.
